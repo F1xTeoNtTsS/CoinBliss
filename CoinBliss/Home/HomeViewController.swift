@@ -10,53 +10,42 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     private let viewModel = HomeViewModel()
-    private var collectionView: UICollectionView!
     
+    private let gradientLayer = CAGradientLayer()
+    private var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        setupBackgroundGradient()
         self.setupCollectionView()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.gradientLayer.frame = self.view.frame
+    }
+    
     private func setupCollectionView() {
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: self.makeCollectionViewLayout())
-        self.view.addSubview(self.collectionView)
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.makeCollectionViewFlowLayout())
         
         collectionView.register(TotalAmountCell.self, forCellWithReuseIdentifier: TotalAmountCell.cellId)
         collectionView.register(TransactionsCell.self, forCellWithReuseIdentifier: TransactionsCell.cellId)
         collectionView.register(SomethingElseCell.self, forCellWithReuseIdentifier: SomethingElseCell.cellId)
-        collectionView.register(HeaderReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderReusableView.viewId)
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        layoutCollectionView()
     }
     
-    private func makeCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
-            guard let self = self else { return nil }
-            let section = self.viewModel.sections[sectionIndex]
-            switch section {
-            case .totalAmount(_):
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60)), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = .init(top: 5, leading: 10, bottom: 10, trailing: 10)
-                section.boundarySupplementaryItems = [self.supplementaryHeaderItem()]
-                return section
-            case .transactions(_):
-                return nil
-            case .somethingElse(_):
-                return nil
-            }
-        }
-    }
-    
-    private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
-        .init(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                heightDimension: .estimated(50)),
-              elementKind: UICollectionView.elementKindSectionHeader,
-              alignment: .top)
+    private func setupBackgroundGradient() {
+        self.view.backgroundColor = .white
+        self.gradientLayer.colors = [CGColor(srgbRed: (65/255.0), green: (200/255.0), blue: (163/255.0), alpha: 1.0),
+                                     UIColor.white.cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
 
@@ -84,17 +73,35 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                         withReuseIdentifier: HeaderReusableView.viewId,
-                                                                         for: indexPath) as! HeaderReusableView
-            header.setup(self.viewModel.sections[indexPath.section].title)
-            return header
-        default:
-            return UICollectionReusableView()
+}
+
+extension HomeViewController {
+    private func makeCollectionViewFlowLayout() -> UICollectionViewCompositionalLayout {
+        UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
+            guard let self = self else { return nil }
+            let section = self.viewModel.sections[sectionIndex]
+            switch section {
+            case .totalAmount(_):
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)), subitems: [item])
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
+                return section
+            case .transactions(_):
+                return nil
+            case .somethingElse(_):
+                return nil
+            }
         }
+    }
+    
+    private func layoutCollectionView() {
+        collectionView.backgroundColor = .clear
+        self.view.addSubview(self.collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            collectionView.heightAnchor.constraint(equalTo: self.view.heightAnchor)
+        ])
     }
 }

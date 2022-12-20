@@ -25,9 +25,9 @@ enum HomeSection {
 }
 
 struct TotalAmount {
-    var total: Int
-    var currencyToShow: String
-    var isHidding: Bool
+    var total: Double
+    var currency: String
+    var isVisible: Bool
 }
 
 struct Transaction {
