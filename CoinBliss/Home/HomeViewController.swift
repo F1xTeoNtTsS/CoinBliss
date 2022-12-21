@@ -25,7 +25,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        self.gradientLayer.frame = self.view.frame
+        self.gradientLayer.frame = self.view.bounds
     }
     
     private func setupCollectionView() {
@@ -43,7 +43,7 @@ final class HomeViewController: UIViewController {
     
     private func setupBackgroundGradient() {
         self.view.backgroundColor = .white
-        self.gradientLayer.colors = [CGColor(srgbRed: (65/255.0), green: (200/255.0), blue: (163/255.0), alpha: 1.0),
+        self.gradientLayer.colors = [Resources.Colors.mainColor.cgColor,
                                      UIColor.white.cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
@@ -59,7 +59,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case .totalAmount(let totalAmount):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TotalAmountCell.cellId,
                                                           for: indexPath) as! TotalAmountCell
-            cell.setup(totalAmount)
+            cell.setupCell(totalAmount)
             return cell
         case .transactions(let transactions):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionsCell.cellId,

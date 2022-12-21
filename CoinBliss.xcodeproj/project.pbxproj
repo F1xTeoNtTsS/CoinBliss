@@ -14,6 +14,7 @@
 		2DBE2D80294C8190003C115E /* TransactionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7F294C8190003C115E /* TransactionsCell.swift */; };
 		2DBE2D82294C84D0003C115E /* SomethingElseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */; };
 		2DBF8B2F2951905D00A2028C /* Heebo-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF8B2E2951903100A2028C /* Heebo-VariableFont_wght.ttf */; };
+		2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3629533CBB00A2028C /* Resources.swift */; };
 		2DD1F9C32947616F00A40A10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9C22947616F00A40A10 /* AppDelegate.swift */; };
 		2DD1F9C52947616F00A40A10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9C42947616F00A40A10 /* SceneDelegate.swift */; };
 		2DD1F9C72947616F00A40A10 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9C62947616F00A40A10 /* HomeViewController.swift */; };
@@ -30,6 +31,7 @@
 		2DBE2D7F294C8190003C115E /* TransactionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCell.swift; sourceTree = "<group>"; };
 		2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomethingElseCell.swift; sourceTree = "<group>"; };
 		2DBF8B2E2951903100A2028C /* Heebo-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		2DBF8B3629533CBB00A2028C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		2DD1F9BF2947616F00A40A10 /* CoinBliss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinBliss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD1F9C22947616F00A40A10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD1F9C42947616F00A40A10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,9 +79,18 @@
 		2DBF8B2D2951903100A2028C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2DBF8B2E2951903100A2028C /* Heebo-VariableFont_wght.ttf */,
+				2DBF8B3629533CBB00A2028C /* Resources.swift */,
+				2DBF8B3829533DAE00A2028C /* RawFiles */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2DBF8B3829533DAE00A2028C /* RawFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2DBF8B2E2951903100A2028C /* Heebo-VariableFont_wght.ttf */,
+			);
+			path = RawFiles;
 			sourceTree = "<group>";
 		};
 		2DD1F9B62947616F00A40A10 = {
@@ -187,6 +198,7 @@
 				2DBE2D76294C7897003C115E /* HomeSection.swift in Sources */,
 				2DBE2D78294C79E1003C115E /* HomeViewModel.swift in Sources */,
 				2DD1F9CD2947616F00A40A10 /* CoinBliss.xcdatamodeld in Sources */,
+				2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */,
 				2DD1F9C72947616F00A40A10 /* HomeViewController.swift in Sources */,
 				2DBE2D80294C8190003C115E /* TransactionsCell.swift in Sources */,
 				2DD1F9C32947616F00A40A10 /* AppDelegate.swift in Sources */,
