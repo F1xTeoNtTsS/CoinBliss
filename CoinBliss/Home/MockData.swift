@@ -13,7 +13,7 @@ final class MockData {
     private init() {}
     
     private let totalAmount: HomeSection = {
-        .totalAmount(TotalAmount(sum: 60606570.55, currency: "IDR", isVisible: true))
+        .totalAmount(TotalAmount(balance: 60606570.55, currency: "IDR", isVisible: true))
     }()
     
     private let transactions: HomeSection = {

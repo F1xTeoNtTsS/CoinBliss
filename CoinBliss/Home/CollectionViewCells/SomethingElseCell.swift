@@ -9,8 +9,4 @@ import UIKit
 
 class SomethingElseCell: UICollectionViewCell {
     static let cellId = "SomethingElseCell"
-    
-    func setup(_ : SomethingElse) {
-        
-    }
 }

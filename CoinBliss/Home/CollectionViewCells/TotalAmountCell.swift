@@ -72,7 +72,7 @@ class TotalAmountCell: UICollectionViewCell {
     
     func setupCell(_ totalAmount: TotalAmount) {
         self.setupEyeButton(isVisible: totalAmount.isVisible)
-        self.setupAmountTitle(amount: totalAmount.sum, isVisible: totalAmount.isVisible)
+        self.setupAmountTitle(amount: totalAmount.balance, isVisible: totalAmount.isVisible)
         self.setupCurrencyButton(currency: totalAmount.currency)
         self.layoutViews()
     }

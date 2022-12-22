@@ -66,11 +66,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                           for: indexPath) as! TransactionsCell
             cell.setup(transactions)
             return cell
-        case .somethingElse(let somethingElse):
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SomethingElseCell.cellId,
-                                                          for: indexPath) as! SomethingElseCell
-            cell.setup(somethingElse)
-            return cell
         }
     }
 }
@@ -88,8 +83,6 @@ extension HomeViewController {
                 section.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
                 return section
             case .transactions(_):
-                return nil
-            case .somethingElse(_):
                 return nil
             }
         }

@@ -10,7 +10,6 @@ import UIKit.UIColor
 enum Resources {
     enum Fonts {
         static let mainFontName = "Heebo-Regular_Medium"
-        
     }
     
     enum Colors {
