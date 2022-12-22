@@ -17,6 +17,8 @@
 		2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3629533CBB00A2028C /* Resources.swift */; };
 		2DBF8B3B2953505F00A2028C /* TotalAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3A2953505F00A2028C /* TotalAmount.swift */; };
 		2DBF8B3D2953508400A2028C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3C2953508400A2028C /* Transaction.swift */; };
+		2DBF8B3F295429E400A2028C /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3E295429E400A2028C /* CategoryStore.swift */; };
+		2DBF8B422954491000A2028C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B412954491000A2028C /* Category.swift */; };
 		2DD1F9C32947616F00A40A10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9C22947616F00A40A10 /* AppDelegate.swift */; };
 		2DD1F9C52947616F00A40A10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9C42947616F00A40A10 /* SceneDelegate.swift */; };
 		2DD1F9C72947616F00A40A10 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9C62947616F00A40A10 /* HomeViewController.swift */; };
@@ -36,6 +38,8 @@
 		2DBF8B3629533CBB00A2028C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		2DBF8B3A2953505F00A2028C /* TotalAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmount.swift; sourceTree = "<group>"; };
 		2DBF8B3C2953508400A2028C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		2DBF8B3E295429E400A2028C /* CategoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
+		2DBF8B412954491000A2028C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2DD1F9BF2947616F00A40A10 /* CoinBliss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinBliss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD1F9C22947616F00A40A10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD1F9C42947616F00A40A10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,24 +64,17 @@
 		2DBE2D79294C7AC8003C115E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2DBF8B4329544FCD00A2028C /* TotalAmount */,
+				2DBF8B40295429FD00A2028C /* Transactions */,
+				2DBF8B4429544FF400A2028C /* Category */,
 				2DBF8B392953502700A2028C /* Models */,
-				2DBE2D7C294C8123003C115E /* CollectionViewCells */,
 				2DD1F9C62947616F00A40A10 /* HomeViewController.swift */,
 				2DBE2D77294C79E1003C115E /* HomeViewModel.swift */,
+				2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */,
 				2DBE2D7A294C7DF4003C115E /* MockData.swift */,
 				2DBF8B2D2951903100A2028C /* Resources */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		2DBE2D7C294C8123003C115E /* CollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				2DBE2D7D294C8172003C115E /* TotalAmountCell.swift */,
-				2DBE2D7F294C8190003C115E /* TransactionsCell.swift */,
-				2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */,
-			);
-			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		2DBF8B2D2951903100A2028C /* Resources */ = {
@@ -101,10 +98,35 @@
 			isa = PBXGroup;
 			children = (
 				2DBE2D75294C7897003C115E /* HomeSection.swift */,
-				2DBF8B3A2953505F00A2028C /* TotalAmount.swift */,
-				2DBF8B3C2953508400A2028C /* Transaction.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2DBF8B40295429FD00A2028C /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				2DBE2D7F294C8190003C115E /* TransactionsCell.swift */,
+				2DBF8B3C2953508400A2028C /* Transaction.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		2DBF8B4329544FCD00A2028C /* TotalAmount */ = {
+			isa = PBXGroup;
+			children = (
+				2DBE2D7D294C8172003C115E /* TotalAmountCell.swift */,
+				2DBF8B3A2953505F00A2028C /* TotalAmount.swift */,
+			);
+			path = TotalAmount;
+			sourceTree = "<group>";
+		};
+		2DBF8B4429544FF400A2028C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2DBF8B412954491000A2028C /* Category.swift */,
+				2DBF8B3E295429E400A2028C /* CategoryStore.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		2DD1F9B62947616F00A40A10 = {
@@ -215,9 +237,11 @@
 				2DD1F9CD2947616F00A40A10 /* CoinBliss.xcdatamodeld in Sources */,
 				2DBF8B3D2953508400A2028C /* Transaction.swift in Sources */,
 				2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */,
+				2DBF8B3F295429E400A2028C /* CategoryStore.swift in Sources */,
 				2DD1F9C72947616F00A40A10 /* HomeViewController.swift in Sources */,
 				2DBE2D80294C8190003C115E /* TransactionsCell.swift in Sources */,
 				2DD1F9C32947616F00A40A10 /* AppDelegate.swift in Sources */,
+				2DBF8B422954491000A2028C /* Category.swift in Sources */,
 				2DBE2D82294C84D0003C115E /* SomethingElseCell.swift in Sources */,
 				2DBE2D7B294C7DF4003C115E /* MockData.swift in Sources */,
 				2DD1F9C52947616F00A40A10 /* SceneDelegate.swift in Sources */,

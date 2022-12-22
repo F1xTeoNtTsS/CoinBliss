@@ -56,9 +56,9 @@ class TotalAmountCell: UICollectionViewCell {
         
         var configuration = UIButton.Configuration.plain()
         configuration.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
+        configuration.baseForegroundColor = .white
         configuration.background.backgroundColor = Resources.Colors.mainColor
         button.configuration = configuration
-        
         return button
     }()
     
@@ -95,7 +95,6 @@ class TotalAmountCell: UICollectionViewCell {
     private func setupCurrencyButton(currency: String) {
         var atr = AttributeContainer()
         atr.font = UIFont(name: Resources.Fonts.mainFontName, size: 30)
-        atr.foregroundColor = .white
         let atrString = NSAttributedString(AttributedString(currency, attributes: atr))
         self.currencyButton.setAttributedTitle(atrString, for: .normal)
     }
@@ -118,8 +117,6 @@ class TotalAmountCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             self.amountLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
                                                     multiplier: Constants.viewSizeMultiplier),
-//            self.amountLabel.heightAnchor.constraint(equalTo: self.contentView.heightAnchor,
-//                                                     multiplier: Constants.viewSizeMultiplier),
             self.amountLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             self.amountLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             
