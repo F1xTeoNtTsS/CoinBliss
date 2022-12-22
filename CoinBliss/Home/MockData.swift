@@ -18,12 +18,27 @@ final class MockData {
     
     private let transactions: HomeSection = {
         .transactions([
-            Transaction(name: "Caffe", sum: -10),
-            Transaction(name: "Clothes", sum: -135),
-            Transaction(name: "Serfing", sum: -30),
-            Transaction(name: "Salary", sum: 5000)
+            Transaction(id: 1, sum: 15000, category: 1, period: .daily, date: MockData.getRandomDate()),
+            Transaction(id: 2, sum: -998700, category: 2, period: .mountly),
+            Transaction(id: 3, sum: 500000, category: 66, period: .weekly),
+            Transaction(id: 4, sum: 90000, category: 4, period: .daily, date: MockData.getRandomDate(), note: "tips"),
+            Transaction(id: 5, sum: 50000, category: 2, period: .weekly)
         ])
     }()
+    
+    static func getRandomDate() -> Date? {
+        let date = Date()
+        let calendar = Calendar.current
+        var dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        guard
+            let days = calendar.range(of: .day, in: .month, for: date),
+            let randomDay = days.randomElement()
+        else {
+                return nil
+        }
+        dateComponents.setValue(randomDay, for: .day)
+        return calendar.date(from: dateComponents)
+    }
     
     var data: [HomeSection] {
         [self.totalAmount]
