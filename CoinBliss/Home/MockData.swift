@@ -13,16 +13,16 @@ final class MockData {
     private init() {}
     
     private let totalAmount: HomeSection = {
-        .totalAmount(TotalAmount(balance: 60606570.55, currency: "IDR", isVisible: true))
+        .totalAmount(TotalAmount(balance: 156888570.55, currency: "IDR", isVisible: true))
     }()
     
     private let transactions: HomeSection = {
         .transactions([
-            Transaction(id: 1, sum: 15000, category: 1, period: .daily, date: MockData.getRandomDate()),
-            Transaction(id: 2, sum: -998700, category: 2, period: .mountly),
-            Transaction(id: 3, sum: 500000, category: 66, period: .weekly),
-            Transaction(id: 4, sum: 90000, category: 4, period: .daily, date: MockData.getRandomDate(), note: "tips"),
-            Transaction(id: 5, sum: 50000, category: 2, period: .weekly)
+            Transaction(id: 1, sum: 15000.500, currency: "IDR", category: 1, period: .daily, date: MockData.getRandomDate()),
+            Transaction(id: 2, sum: -100, currency: "USD", category: 2, period: .mountly),
+            Transaction(id: 3, sum: 5000.70, currency: "RUB", category: 66, period: .weekly),
+            Transaction(id: 4, sum: 90000, currency: "IDR", category: 4, period: .daily, date: MockData.getRandomDate(), note: "tips"),
+            Transaction(id: 5, sum: 500000, currency: "IDR", category: 2, period: .weekly)
         ])
     }()
     
@@ -41,6 +41,7 @@ final class MockData {
     }
     
     var data: [HomeSection] {
-        [self.totalAmount]
+        [self.totalAmount,
+         self.transactions]
     }
 }

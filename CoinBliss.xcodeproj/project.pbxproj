@@ -11,7 +11,7 @@
 		2DBE2D78294C79E1003C115E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D77294C79E1003C115E /* HomeViewModel.swift */; };
 		2DBE2D7B294C7DF4003C115E /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7A294C7DF4003C115E /* MockData.swift */; };
 		2DBE2D7E294C8172003C115E /* TotalAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7D294C8172003C115E /* TotalAmountCell.swift */; };
-		2DBE2D80294C8190003C115E /* TransactionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7F294C8190003C115E /* TransactionsCell.swift */; };
+		2DBE2D80294C8190003C115E /* MultiplyTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7F294C8190003C115E /* MultiplyTransactionCell.swift */; };
 		2DBE2D82294C84D0003C115E /* SomethingElseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */; };
 		2DBF8B2F2951905D00A2028C /* Heebo-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF8B2E2951903100A2028C /* Heebo-VariableFont_wght.ttf */; };
 		2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3629533CBB00A2028C /* Resources.swift */; };
@@ -19,6 +19,8 @@
 		2DBF8B3D2953508400A2028C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3C2953508400A2028C /* Transaction.swift */; };
 		2DBF8B3F295429E400A2028C /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3E295429E400A2028C /* CategoryStore.swift */; };
 		2DBF8B422954491000A2028C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B412954491000A2028C /* Category.swift */; };
+		2DBF8B462954531700A2028C /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B452954531700A2028C /* TransactionsController.swift */; };
+		2DBF8B482954544E00A2028C /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B472954544E00A2028C /* TransactionCell.swift */; };
 		2DD1F9C32947616F00A40A10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9C22947616F00A40A10 /* AppDelegate.swift */; };
 		2DD1F9C52947616F00A40A10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9C42947616F00A40A10 /* SceneDelegate.swift */; };
 		2DD1F9C72947616F00A40A10 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9C62947616F00A40A10 /* HomeViewController.swift */; };
@@ -32,7 +34,7 @@
 		2DBE2D77294C79E1003C115E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2DBE2D7A294C7DF4003C115E /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		2DBE2D7D294C8172003C115E /* TotalAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmountCell.swift; sourceTree = "<group>"; };
-		2DBE2D7F294C8190003C115E /* TransactionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCell.swift; sourceTree = "<group>"; };
+		2DBE2D7F294C8190003C115E /* MultiplyTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplyTransactionCell.swift; sourceTree = "<group>"; };
 		2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomethingElseCell.swift; sourceTree = "<group>"; };
 		2DBF8B2E2951903100A2028C /* Heebo-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		2DBF8B3629533CBB00A2028C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		2DBF8B3C2953508400A2028C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2DBF8B3E295429E400A2028C /* CategoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
 		2DBF8B412954491000A2028C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2DBF8B452954531700A2028C /* TransactionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsController.swift; sourceTree = "<group>"; };
+		2DBF8B472954544E00A2028C /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		2DD1F9BF2947616F00A40A10 /* CoinBliss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinBliss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD1F9C22947616F00A40A10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD1F9C42947616F00A40A10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +109,9 @@
 		2DBF8B40295429FD00A2028C /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
-				2DBE2D7F294C8190003C115E /* TransactionsCell.swift */,
+				2DBF8B452954531700A2028C /* TransactionsController.swift */,
+				2DBF8B472954544E00A2028C /* TransactionCell.swift */,
+				2DBE2D7F294C8190003C115E /* MultiplyTransactionCell.swift */,
 				2DBF8B3C2953508400A2028C /* Transaction.swift */,
 			);
 			path = Transactions;
@@ -232,14 +238,16 @@
 			files = (
 				2DBF8B3B2953505F00A2028C /* TotalAmount.swift in Sources */,
 				2DBE2D7E294C8172003C115E /* TotalAmountCell.swift in Sources */,
+				2DBF8B482954544E00A2028C /* TransactionCell.swift in Sources */,
 				2DBE2D76294C7897003C115E /* HomeSection.swift in Sources */,
 				2DBE2D78294C79E1003C115E /* HomeViewModel.swift in Sources */,
+				2DBF8B462954531700A2028C /* TransactionsController.swift in Sources */,
 				2DD1F9CD2947616F00A40A10 /* CoinBliss.xcdatamodeld in Sources */,
 				2DBF8B3D2953508400A2028C /* Transaction.swift in Sources */,
 				2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */,
 				2DBF8B3F295429E400A2028C /* CategoryStore.swift in Sources */,
 				2DD1F9C72947616F00A40A10 /* HomeViewController.swift in Sources */,
-				2DBE2D80294C8190003C115E /* TransactionsCell.swift in Sources */,
+				2DBE2D80294C8190003C115E /* MultiplyTransactionCell.swift in Sources */,
 				2DD1F9C32947616F00A40A10 /* AppDelegate.swift in Sources */,
 				2DBF8B422954491000A2028C /* Category.swift in Sources */,
 				2DBE2D82294C84D0003C115E /* SomethingElseCell.swift in Sources */,
@@ -388,8 +396,8 @@
 				INFOPLIST_FILE = CoinBliss/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,8 +423,8 @@
 				INFOPLIST_FILE = CoinBliss/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
