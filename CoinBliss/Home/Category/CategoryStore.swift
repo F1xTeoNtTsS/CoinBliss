@@ -14,6 +14,6 @@ final class CategoryStore: ObservableObject {
     private init() {}
     
     func getCategoryForId(_ id: Int) -> Category {
-        return Category(name: "", icon: "", color: "", id: 1)
+        return Category(id: 1, name: "", icon: "", color: "")
     }
 }

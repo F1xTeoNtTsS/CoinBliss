@@ -19,7 +19,7 @@ class TotalAmountCell: UICollectionViewCell {
         
         var configuration = UIButton.Configuration.plain()
         configuration.baseForegroundColor = .white
-        configuration.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+        configuration.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
         configuration.background.backgroundColor = Resources.Colors.mainColor
         button.configuration = configuration
         
@@ -55,7 +55,7 @@ class TotalAmountCell: UICollectionViewCell {
         button.layer.borderWidth = 1
         
         var configuration = UIButton.Configuration.plain()
-        configuration.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
+        configuration.contentInsets = .init(top: 4, leading: 8, bottom: 4, trailing: 8)
         configuration.baseForegroundColor = .white
         configuration.background.backgroundColor = Resources.Colors.mainColor
         button.configuration = configuration
@@ -74,7 +74,7 @@ class TotalAmountCell: UICollectionViewCell {
         self.setupEyeButton(isVisible: totalAmount.isVisible)
         self.setupAmountTitle(amount: totalAmount.balance, isVisible: totalAmount.isVisible)
         self.setupCurrencyButton(currency: totalAmount.currency)
-        self.layoutViews()
+        self.setViewsLayout()
     }
     
     private func setupEyeButton(isVisible: Bool) {
@@ -94,7 +94,7 @@ class TotalAmountCell: UICollectionViewCell {
     
     private func setupCurrencyButton(currency: String) {
         var atr = AttributeContainer()
-        atr.font = UIFont(name: Resources.Fonts.mainFontName, size: 30)
+        atr.font = UIFont(name: Resources.Fonts.mainFontName, size: 24)
         let atrString = NSAttributedString(AttributedString(currency, attributes: atr))
         self.currencyButton.setAttributedTitle(atrString, for: .normal)
     }
@@ -108,39 +108,47 @@ class TotalAmountCell: UICollectionViewCell {
         return formatter
     }
     
-    private func layoutViews() {
-        let views = [self.amountLabel, self.describeLabel, self.eyeButton, self.currencyButton]
+    private func setViewsLayout() {
+        let views = [self.eyeButton, self.currencyButton, self.amountLabel]
         views.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.contentView.addSubview(view)
         }
+        
         NSLayoutConstraint.activate([
-            self.amountLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
-                                                    multiplier: Constants.viewSizeMultiplier),
-            self.amountLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            self.amountLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            
-            self.describeLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
-                                                     multiplier: Constants.viewSizeMultiplier),
-            self.describeLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor),
-            self.describeLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            
             self.eyeButton.heightAnchor.constraint(greaterThanOrEqualTo: self.contentView.heightAnchor, multiplier: 0.4),
+            self.eyeButton.widthAnchor.constraint(equalTo: self.eyeButton.heightAnchor),
             self.eyeButton.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            self.eyeButton.trailingAnchor.constraint(equalTo: self.amountLabel.leadingAnchor, constant: -10),
+            self.eyeButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             
             self.currencyButton.heightAnchor.constraint(greaterThanOrEqualTo: self.contentView.heightAnchor, multiplier: 0.4),
-            self.currencyButton.widthAnchor.constraint(greaterThanOrEqualToConstant: self.currencyButton.intrinsicContentSize.width),
+            self.currencyButton.widthAnchor.constraint(lessThanOrEqualToConstant: self.currencyButton.intrinsicContentSize.width),
             self.currencyButton.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            self.currencyButton.leadingAnchor.constraint(equalTo: self.amountLabel.trailingAnchor, constant: 10),
-            self.currencyButton.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -20)
+            self.currencyButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            
+//            self.amountLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
+//                                                    multiplier: Constants.viewSizeMultiplier),
+            
+//            self.amountLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            self.amountLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+            self.amountLabel.leadingAnchor.constraint(equalTo: self.eyeButton.trailingAnchor, constant: 20),
+            self.amountLabel.trailingAnchor.constraint(equalTo: self.currencyButton.leadingAnchor, constant: -20),
+//
+//            self.describeLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
+//                                                     multiplier: Constants.viewSizeMultiplier),
+//            self.describeLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor),
+//            self.describeLabel.centerXAnchor.constraint(equalTo: self.amountLabel.centerXAnchor),
+//
+//
+//
+
         ])
     }
     
     private enum Constants {
         static let cellId = "TotalAmountCell"
         static let textWithStars = "**********"
-        static let viewSizeMultiplier: CGFloat = 0.5
+        static let viewSizeMultiplier: CGFloat = 0.7
         static let buttonsCornerRadius: CGFloat = 10
         static let amountLabelFontSize: CGFloat = 30
         static let describelabelFontSize: CGFloat = 12

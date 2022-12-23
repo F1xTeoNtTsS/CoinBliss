@@ -22,7 +22,7 @@ final class HomeViewController: UIViewController {
         self.setupCollectionView()
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         self.gradientLayer.frame = self.view.bounds
@@ -32,13 +32,12 @@ final class HomeViewController: UIViewController {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.makeCollectionViewFlowLayout())
         
         collectionView.register(TotalAmountCell.self, forCellWithReuseIdentifier: TotalAmountCell.cellId)
-        collectionView.register(TransactionsCell.self, forCellWithReuseIdentifier: TransactionsCell.cellId)
-        collectionView.register(SomethingElseCell.self, forCellWithReuseIdentifier: SomethingElseCell.cellId)
+        collectionView.register(MultiplyTransactionCell.self, forCellWithReuseIdentifier: MultiplyTransactionCell.cellId)
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        layoutCollectionView()
+        setCollectionViewLayout()
     }
     
     private func setupBackgroundGradient() {
@@ -50,8 +49,15 @@ final class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.viewModel.sections.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.viewModel.sections.count
+        switch self.viewModel.sections[section] {
+        default:
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -62,8 +68,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.setupCell(totalAmount)
             return cell
         case .transactions(let transactions):
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionsCell.cellId,
-                                                          for: indexPath) as! TransactionsCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MultiplyTransactionCell.cellId,
+                                                          for: indexPath) as! MultiplyTransactionCell
             cell.setup(transactions)
             return cell
         }
@@ -80,15 +86,19 @@ extension HomeViewController {
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = .init(top: 0, leading: 10, bottom: 10, trailing: 10)
+                section.contentInsets = .init(top: 0, leading: 20, bottom: 10, trailing: 20)
                 return section
             case .transactions(_):
-                return nil
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)), subitems: [item])
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
+                return section
             }
         }
     }
     
-    private func layoutCollectionView() {
+    private func setCollectionViewLayout() {
         collectionView.backgroundColor = .clear
         self.view.addSubview(self.collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false

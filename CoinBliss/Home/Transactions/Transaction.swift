@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Transaction {
+struct Transaction: ListItem {
     var id: Int
     var sum: Double
+    var currency: String
     var category: Int
     var period: Period
     var date: Date?
