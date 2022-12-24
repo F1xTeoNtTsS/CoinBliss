@@ -45,12 +45,12 @@ final class TransactionCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             self.sumLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor),
-            self.sumLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+//            self.sumLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             self.sumLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            
-            separatorView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            separatorView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            separatorView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 8),
+
+            separatorView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 30),
+            separatorView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            separatorView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 8),
             separatorView.heightAnchor.constraint(equalToConstant: 1)
         ])
         

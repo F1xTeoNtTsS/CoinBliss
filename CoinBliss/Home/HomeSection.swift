@@ -9,10 +9,10 @@ enum HomeSection {
     case totalAmount(TotalAmount)
     case transactions([Transaction])
     
-    var items: [ListItem] {
+    var items: [SectionItem] {
         switch self {
-        case .totalAmount(let items):
-            return [items]
+        case .totalAmount(let item):
+            return [item]
         case .transactions(let items):
             return items
         }

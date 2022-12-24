@@ -109,7 +109,7 @@ class TotalAmountCell: UICollectionViewCell {
     }
     
     private func setViewsLayout() {
-        let views = [self.eyeButton, self.currencyButton, self.amountLabel]
+        let views = [self.eyeButton, self.currencyButton, self.amountLabel, self.describeLabel]
         views.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.contentView.addSubview(view)
@@ -134,10 +134,10 @@ class TotalAmountCell: UICollectionViewCell {
             self.amountLabel.leadingAnchor.constraint(equalTo: self.eyeButton.trailingAnchor, constant: 20),
             self.amountLabel.trailingAnchor.constraint(equalTo: self.currencyButton.leadingAnchor, constant: -20),
 //
-//            self.describeLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
-//                                                     multiplier: Constants.viewSizeMultiplier),
-//            self.describeLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor),
-//            self.describeLabel.centerXAnchor.constraint(equalTo: self.amountLabel.centerXAnchor),
+            self.describeLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
+                                                     multiplier: Constants.viewSizeMultiplier),
+            self.describeLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor),
+            self.describeLabel.centerXAnchor.constraint(equalTo: self.amountLabel.centerXAnchor),
 //
 //
 //

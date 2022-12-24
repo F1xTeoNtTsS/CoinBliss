@@ -18,11 +18,18 @@ final class MockData {
     
     private let transactions: HomeSection = {
         .transactions([
-            Transaction(id: 1, sum: 15000.500, currency: "IDR", category: 1, period: .daily, date: MockData.getRandomDate()),
-            Transaction(id: 2, sum: -100, currency: "USD", category: 2, period: .mountly),
-            Transaction(id: 3, sum: 5000.70, currency: "RUB", category: 66, period: .weekly),
-            Transaction(id: 4, sum: 90000, currency: "IDR", category: 4, period: .daily, date: MockData.getRandomDate(), note: "tips"),
-            Transaction(id: 5, sum: 500000, currency: "IDR", category: 2, period: .weekly)
+            Transaction(id: 0, sum: 15000.500, currency: "IDR", category: 1, period: .daily, date: MockData.getRandomDate()),
+            Transaction(id: 1, sum: -100, currency: "USD", category: 2, period: .mountly),
+            Transaction(id: 2, sum: 5000.70, currency: "RUB", category: 66, period: .weekly),
+            Transaction(id: 3, sum: 90000, currency: "IDR", category: 4, period: .daily, date: MockData.getRandomDate(), note: "tips"),
+            Transaction(id: 4, sum: 500000, currency: "IDR", category: 2, period: .weekly),
+            Transaction(id: 5, sum: 100000, currency: "IDR", category: 2, period: .daily),
+            Transaction(id: 6, sum: 15000.500, currency: "IDR", category: 1, period: .daily, date: MockData.getRandomDate()),
+            Transaction(id: 7, sum: -100, currency: "USD", category: 2, period: .mountly),
+            Transaction(id: 8, sum: 5000.70, currency: "RUB", category: 66, period: .weekly),
+            Transaction(id: 9, sum: 90000, currency: "IDR", category: 4, period: .daily, date: MockData.getRandomDate(), note: "tips"),
+            Transaction(id: 10, sum: 500000, currency: "IDR", category: 2, period: .weekly),
+            Transaction(id: 11, sum: 100000, currency: "IDR", category: 2, period: .daily)
         ])
     }()
     

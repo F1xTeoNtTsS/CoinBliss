@@ -68,10 +68,10 @@
 		2DBE2D79294C7AC8003C115E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2DBE2D75294C7897003C115E /* HomeSection.swift */,
 				2DBF8B4329544FCD00A2028C /* TotalAmount */,
 				2DBF8B40295429FD00A2028C /* Transactions */,
 				2DBF8B4429544FF400A2028C /* Category */,
-				2DBF8B392953502700A2028C /* Models */,
 				2DD1F9C62947616F00A40A10 /* HomeViewController.swift */,
 				2DBE2D77294C79E1003C115E /* HomeViewModel.swift */,
 				2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */,
@@ -96,14 +96,6 @@
 				2DBF8B2E2951903100A2028C /* Heebo-VariableFont_wght.ttf */,
 			);
 			path = RawFiles;
-			sourceTree = "<group>";
-		};
-		2DBF8B392953502700A2028C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2DBE2D75294C7897003C115E /* HomeSection.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		2DBF8B40295429FD00A2028C /* Transactions */ = {

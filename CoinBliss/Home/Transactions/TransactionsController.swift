@@ -38,7 +38,7 @@ final class TransactionsController: UICollectionViewController {
         case .none:
             break
         }
-
+        
         collectionView.register(TransactionCell.self, forCellWithReuseIdentifier: TransactionCell.cellId)
     }
     
@@ -72,13 +72,15 @@ final class TransactionsController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        let transactionId = transactions[indexPath.item].id
-//        let transactionVC = DetailTransactionController(transactionId: transactionId)
+        let transactionVC = TransactionsController(mode: .fullscreen)
 //        navigationController?.pushViewController(transactionVC, animated: true)
+        transactionVC.transactions = self.transactions
+        self.present(transactionVC, animated: true)
     }
     
     init(mode: Mode) {
         self.mode = mode
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        super.init(collectionViewLayout: AutoInvalidatingLayout())
     }
 
     required init?(coder: NSCoder) {
@@ -99,7 +101,7 @@ extension TransactionsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height: CGFloat = 68
+        let height: CGFloat = 60
         if mode == .small {
             return .init(width: view.frame.width, height: height)
         }
@@ -110,5 +112,57 @@ extension TransactionsController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
+    }
+}
+
+class AutoInvalidatingLayout: UICollectionViewFlowLayout {
+    // Compute the width of a full width cell
+    // for a given bounds
+    func widestCellWidth(bounds: CGRect) -> CGFloat {
+        guard let collectionView = collectionView else {
+            return 0
+        }
+
+        let insets = collectionView.contentInset
+        let width = bounds.width - insets.left - insets.right
+        
+        if width < 0 { return 0 }
+        else { return width }
+    }
+    
+    // Update the estimatedItemSize for a given bounds
+    func updateEstimatedItemSize(bounds: CGRect) {
+        estimatedItemSize = CGSize(
+            width: widestCellWidth(bounds: bounds),
+            // Make the height a reasonable estimate to
+            // ensure the scroll bar remains smooth
+            height: .zero
+        )
+    }
+
+    // assign an initial estimatedItemSize by calling
+    // updateEstimatedItemSize. prepare() will be called
+    // the first time a collectionView is assigned
+    override func prepare() {
+        super.prepare()
+
+        let bounds = collectionView?.bounds ?? .zero
+        updateEstimatedItemSize(bounds: bounds)
+    }
+    
+    // If the current collectionView bounds.size does
+    // not match newBounds.size, update the
+    // estimatedItemSize via updateEstimatedItemSize
+    // and invalidate the layout
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        guard let collectionView = collectionView else {
+            return false
+        }
+        
+        let oldSize = collectionView.bounds.size
+        guard oldSize != newBounds.size else { return false }
+        
+        updateEstimatedItemSize(bounds: newBounds)
+        return true
     }
 }

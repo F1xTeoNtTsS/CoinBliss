@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Transaction: ListItem {
+struct Transaction: SectionItem {
     var id: Int
     var sum: Double
     var currency: String
