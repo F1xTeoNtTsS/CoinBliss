@@ -5,9 +5,7 @@
 //  Created by F1xTeoNtTsS on 21/12/2022.
 //
 
-protocol SectionItem { }
-
-struct TotalAmount: SectionItem {
+struct TotalAmount {
     var balance: Double
     var currency: String
     var isVisible: Bool
