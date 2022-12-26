@@ -17,7 +17,6 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         setupBackgroundGradient()
         self.setupCollectionView()
     }
@@ -42,7 +41,7 @@ final class HomeViewController: UIViewController {
     
     private func setupBackgroundGradient() {
         self.view.backgroundColor = .white
-        self.gradientLayer.colors = [Resources.Colors.mainColor.cgColor,
+        self.gradientLayer.colors = [Resources.Colors.mainPositiveColor.cgColor,
                                      UIColor.white.cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
@@ -62,15 +61,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch self.viewModel.sections[indexPath.section] {
-        case .totalAmount(let totalAmount):
+        case .totalAmountSection(let totalAmount):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TotalAmountCell.cellId,
                                                           for: indexPath) as! TotalAmountCell
             cell.setupCell(totalAmount)
             return cell
-        case .transactions(let transactions):
+        case .transactionsSection(let transactionsPreview):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MultiplyTransactionCell.cellId,
                                                           for: indexPath) as! MultiplyTransactionCell
-            cell.setup(transactions)
+            cell.setup(transactionsPreview)
+            // TODO: - Model for cell with amount and category
             return cell
         }
     }
@@ -82,15 +82,15 @@ extension HomeViewController {
             guard let self = self else { return nil }
             let section = self.viewModel.sections[sectionIndex]
             switch section {
-            case .totalAmount(_):
+            case .totalAmountSection(_):
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets = .init(top: 0, leading: 20, bottom: 10, trailing: 20)
                 return section
-            case .transactions(_):
+            case .transactionsSection(let transactions):
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)), subitems: [item])
+                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(CGFloat(70 * transactions.count - 1))), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
                 return section

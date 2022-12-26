@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DBE2D76294C7897003C115E /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D75294C7897003C115E /* HomeSection.swift */; };
+		2D2BAC4E2957FFA900749520 /* AutoInvalidatingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BAC4D2957FFA900749520 /* AutoInvalidatingLayout.swift */; };
+		2D2BAC502958786A00749520 /* PaymentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BAC4F2958786A00749520 /* PaymentStore.swift */; };
+		2DBE2D76294C7897003C115E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D75294C7897003C115E /* HomeModel.swift */; };
 		2DBE2D78294C79E1003C115E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D77294C79E1003C115E /* HomeViewModel.swift */; };
-		2DBE2D7B294C7DF4003C115E /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7A294C7DF4003C115E /* MockData.swift */; };
+		2DBE2D7B294C7DF4003C115E /* HomeMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7A294C7DF4003C115E /* HomeMockData.swift */; };
 		2DBE2D7E294C8172003C115E /* TotalAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7D294C8172003C115E /* TotalAmountCell.swift */; };
 		2DBE2D80294C8190003C115E /* MultiplyTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7F294C8190003C115E /* MultiplyTransactionCell.swift */; };
-		2DBE2D82294C84D0003C115E /* SomethingElseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */; };
 		2DBF8B2F2951905D00A2028C /* Heebo-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF8B2E2951903100A2028C /* Heebo-VariableFont_wght.ttf */; };
 		2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3629533CBB00A2028C /* Resources.swift */; };
 		2DBF8B3B2953505F00A2028C /* TotalAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3A2953505F00A2028C /* TotalAmount.swift */; };
-		2DBF8B3D2953508400A2028C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3C2953508400A2028C /* Transaction.swift */; };
+		2DBF8B3D2953508400A2028C /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3C2953508400A2028C /* Payment.swift */; };
 		2DBF8B3F295429E400A2028C /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B3E295429E400A2028C /* CategoryStore.swift */; };
 		2DBF8B422954491000A2028C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B412954491000A2028C /* Category.swift */; };
 		2DBF8B462954531700A2028C /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF8B452954531700A2028C /* TransactionsController.swift */; };
@@ -27,19 +28,22 @@
 		2DD1F9CD2947616F00A40A10 /* CoinBliss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F9CB2947616F00A40A10 /* CoinBliss.xcdatamodeld */; };
 		2DD1F9CF2947617000A40A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD1F9CE2947617000A40A10 /* Assets.xcassets */; };
 		2DD1F9D22947617000A40A10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD1F9D02947617000A40A10 /* LaunchScreen.storyboard */; };
+		2DD861052959A1ED00582775 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD861042959A1ED00582775 /* Transaction.swift */; };
+		2DD861072959B3C200582775 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD861062959B3C200582775 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DBE2D75294C7897003C115E /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		2D2BAC4D2957FFA900749520 /* AutoInvalidatingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInvalidatingLayout.swift; sourceTree = "<group>"; };
+		2D2BAC4F2958786A00749520 /* PaymentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStore.swift; sourceTree = "<group>"; };
+		2DBE2D75294C7897003C115E /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		2DBE2D77294C79E1003C115E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		2DBE2D7A294C7DF4003C115E /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		2DBE2D7A294C7DF4003C115E /* HomeMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockData.swift; sourceTree = "<group>"; };
 		2DBE2D7D294C8172003C115E /* TotalAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmountCell.swift; sourceTree = "<group>"; };
 		2DBE2D7F294C8190003C115E /* MultiplyTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplyTransactionCell.swift; sourceTree = "<group>"; };
-		2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomethingElseCell.swift; sourceTree = "<group>"; };
 		2DBF8B2E2951903100A2028C /* Heebo-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		2DBF8B3629533CBB00A2028C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		2DBF8B3A2953505F00A2028C /* TotalAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmount.swift; sourceTree = "<group>"; };
-		2DBF8B3C2953508400A2028C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		2DBF8B3C2953508400A2028C /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		2DBF8B3E295429E400A2028C /* CategoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
 		2DBF8B412954491000A2028C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2DBF8B452954531700A2028C /* TransactionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 		2DD1F9CE2947617000A40A10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DD1F9D12947617000A40A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DD1F9D32947617000A40A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DD861042959A1ED00582775 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		2DD861062959B3C200582775 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,18 +71,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D2BAC4C2957FF8300749520 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2D2BAC4D2957FFA900749520 /* AutoInvalidatingLayout.swift */,
+				2DD861062959B3C200582775 /* UIColor+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2DBE2D79294C7AC8003C115E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2DBF8B4329544FCD00A2028C /* TotalAmount */,
-				2DBF8B40295429FD00A2028C /* Transactions */,
-				2DBF8B4429544FF400A2028C /* Category */,
-				2DBF8B392953502700A2028C /* Models */,
-				2DD1F9C62947616F00A40A10 /* HomeViewController.swift */,
+				2DBE2D75294C7897003C115E /* HomeModel.swift */,
 				2DBE2D77294C79E1003C115E /* HomeViewModel.swift */,
-				2DBE2D81294C84D0003C115E /* SomethingElseCell.swift */,
-				2DBE2D7A294C7DF4003C115E /* MockData.swift */,
+				2DD1F9C62947616F00A40A10 /* HomeViewController.swift */,
+				2DBE2D7A294C7DF4003C115E /* HomeMockData.swift */,
+				2DBF8B4329544FCD00A2028C /* TotalAmountSection */,
+				2DBF8B40295429FD00A2028C /* TransactionsSection */,
+				2DD860FD29587A0B00582775 /* Payment */,
+				2DBF8B4429544FF400A2028C /* Category */,
 				2DBF8B2D2951903100A2028C /* Resources */,
+				2D2BAC4C2957FF8300749520 /* Helpers */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -98,32 +114,24 @@
 			path = RawFiles;
 			sourceTree = "<group>";
 		};
-		2DBF8B392953502700A2028C /* Models */ = {
+		2DBF8B40295429FD00A2028C /* TransactionsSection */ = {
 			isa = PBXGroup;
 			children = (
-				2DBE2D75294C7897003C115E /* HomeSection.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		2DBF8B40295429FD00A2028C /* Transactions */ = {
-			isa = PBXGroup;
-			children = (
+				2DBE2D7F294C8190003C115E /* MultiplyTransactionCell.swift */,
 				2DBF8B452954531700A2028C /* TransactionsController.swift */,
 				2DBF8B472954544E00A2028C /* TransactionCell.swift */,
-				2DBE2D7F294C8190003C115E /* MultiplyTransactionCell.swift */,
-				2DBF8B3C2953508400A2028C /* Transaction.swift */,
+				2DD861042959A1ED00582775 /* Transaction.swift */,
 			);
-			path = Transactions;
+			path = TransactionsSection;
 			sourceTree = "<group>";
 		};
-		2DBF8B4329544FCD00A2028C /* TotalAmount */ = {
+		2DBF8B4329544FCD00A2028C /* TotalAmountSection */ = {
 			isa = PBXGroup;
 			children = (
-				2DBE2D7D294C8172003C115E /* TotalAmountCell.swift */,
 				2DBF8B3A2953505F00A2028C /* TotalAmount.swift */,
+				2DBE2D7D294C8172003C115E /* TotalAmountCell.swift */,
 			);
-			path = TotalAmount;
+			path = TotalAmountSection;
 			sourceTree = "<group>";
 		};
 		2DBF8B4429544FF400A2028C /* Category */ = {
@@ -163,6 +171,15 @@
 				2DD1F9CB2947616F00A40A10 /* CoinBliss.xcdatamodeld */,
 			);
 			path = CoinBliss;
+			sourceTree = "<group>";
+		};
+		2DD860FD29587A0B00582775 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				2DBF8B3C2953508400A2028C /* Payment.swift */,
+				2D2BAC4F2958786A00749520 /* PaymentStore.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,19 +256,22 @@
 				2DBF8B3B2953505F00A2028C /* TotalAmount.swift in Sources */,
 				2DBE2D7E294C8172003C115E /* TotalAmountCell.swift in Sources */,
 				2DBF8B482954544E00A2028C /* TransactionCell.swift in Sources */,
-				2DBE2D76294C7897003C115E /* HomeSection.swift in Sources */,
+				2DBE2D76294C7897003C115E /* HomeModel.swift in Sources */,
 				2DBE2D78294C79E1003C115E /* HomeViewModel.swift in Sources */,
+				2D2BAC502958786A00749520 /* PaymentStore.swift in Sources */,
 				2DBF8B462954531700A2028C /* TransactionsController.swift in Sources */,
 				2DD1F9CD2947616F00A40A10 /* CoinBliss.xcdatamodeld in Sources */,
-				2DBF8B3D2953508400A2028C /* Transaction.swift in Sources */,
+				2DBF8B3D2953508400A2028C /* Payment.swift in Sources */,
+				2DD861072959B3C200582775 /* UIColor+Extension.swift in Sources */,
+				2D2BAC4E2957FFA900749520 /* AutoInvalidatingLayout.swift in Sources */,
 				2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */,
 				2DBF8B3F295429E400A2028C /* CategoryStore.swift in Sources */,
 				2DD1F9C72947616F00A40A10 /* HomeViewController.swift in Sources */,
 				2DBE2D80294C8190003C115E /* MultiplyTransactionCell.swift in Sources */,
 				2DD1F9C32947616F00A40A10 /* AppDelegate.swift in Sources */,
 				2DBF8B422954491000A2028C /* Category.swift in Sources */,
-				2DBE2D82294C84D0003C115E /* SomethingElseCell.swift in Sources */,
-				2DBE2D7B294C7DF4003C115E /* MockData.swift in Sources */,
+				2DD861052959A1ED00582775 /* Transaction.swift in Sources */,
+				2DBE2D7B294C7DF4003C115E /* HomeMockData.swift in Sources */,
 				2DD1F9C52947616F00A40A10 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,6 @@ import Foundation
 struct Category: Identifiable, Codable {
     let id: Int
     let name: String
-    let icon: String
-    let color: String
+    let imageName: String
+    let hexColor: String
 }

@@ -8,5 +8,9 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    let sections = MockData.shared.data
+    let sections: [HomeModel]
+    
+    init() {
+        self.sections = HomeMockData.shared.data
+    }
 }

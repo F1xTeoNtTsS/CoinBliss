@@ -21,7 +21,7 @@ final class TransactionsController: UICollectionViewController {
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
-        button.tintColor = Resources.Colors.mainColor
+        button.tintColor = Resources.Colors.mainPositiveColor
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -38,12 +38,12 @@ final class TransactionsController: UICollectionViewController {
         case .none:
             break
         }
-
+        
         collectionView.register(TransactionCell.self, forCellWithReuseIdentifier: TransactionCell.cellId)
     }
     
     @objc private func closeButtonTapped() {
-        dismiss(animated: true)
+        self.dismiss(animated: true)
     }
     
     private func setCloseButton() {
@@ -66,19 +66,19 @@ final class TransactionsController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionCell.cellId,
                                                       for: indexPath) as! TransactionCell
-        cell.setup(self.transactions[indexPath.row])
+        DispatchQueue.main.async {
+            cell.setup(self.transactions[indexPath.row])
+        }
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let transactionId = transactions[indexPath.item].id
-//        let transactionVC = DetailTransactionController(transactionId: transactionId)
-//        navigationController?.pushViewController(transactionVC, animated: true)
+        // TODO: - present full transaction VC logic
     }
     
     init(mode: Mode) {
         self.mode = mode
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        super.init(collectionViewLayout: AutoInvalidatingLayout())
     }
 
     required init?(coder: NSCoder) {
@@ -99,7 +99,7 @@ extension TransactionsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height: CGFloat = 68
+        let height: CGFloat = 70
         if mode == .small {
             return .init(width: view.frame.width, height: height)
         }
@@ -109,6 +109,6 @@ extension TransactionsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 16
+        return 0
     }
 }

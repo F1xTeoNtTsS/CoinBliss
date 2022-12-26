@@ -20,7 +20,7 @@ class TotalAmountCell: UICollectionViewCell {
         var configuration = UIButton.Configuration.plain()
         configuration.baseForegroundColor = .white
         configuration.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
-        configuration.background.backgroundColor = Resources.Colors.mainColor
+        configuration.background.backgroundColor = Resources.Colors.mainPositiveColor
         button.configuration = configuration
         
         return button
@@ -57,7 +57,7 @@ class TotalAmountCell: UICollectionViewCell {
         var configuration = UIButton.Configuration.plain()
         configuration.contentInsets = .init(top: 4, leading: 8, bottom: 4, trailing: 8)
         configuration.baseForegroundColor = .white
-        configuration.background.backgroundColor = Resources.Colors.mainColor
+        configuration.background.backgroundColor = Resources.Colors.mainPositiveColor
         button.configuration = configuration
         return button
     }()
@@ -85,10 +85,15 @@ class TotalAmountCell: UICollectionViewCell {
     private func setupAmountTitle(amount: Double, isVisible: Bool) {
         var text: String? = Constants.textWithStars
         if isVisible {
-            let formatter = makeFormatter()
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            formatter.currencySymbol = ""
+            formatter.currencyDecimalSeparator = ","
+            formatter.currencyGroupingSeparator = " "
             let number = NSNumber(value: amount)
             text = formatter.string(from: number)
         }
+        
         self.amountLabel.text = text
     }
     
@@ -99,49 +104,32 @@ class TotalAmountCell: UICollectionViewCell {
         self.currencyButton.setAttributedTitle(atrString, for: .normal)
     }
     
-    private func makeFormatter() -> NumberFormatter {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencySymbol = ""
-        formatter.currencyDecimalSeparator = ","
-        formatter.currencyGroupingSeparator = " "
-        return formatter
-    }
-    
     private func setViewsLayout() {
-        let views = [self.eyeButton, self.currencyButton, self.amountLabel]
+        let views = [self.eyeButton, self.currencyButton, self.amountLabel, self.describeLabel]
         views.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.contentView.addSubview(view)
         }
         
         NSLayoutConstraint.activate([
-            self.eyeButton.heightAnchor.constraint(greaterThanOrEqualTo: self.contentView.heightAnchor, multiplier: 0.4),
+            self.eyeButton.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.4),
             self.eyeButton.widthAnchor.constraint(equalTo: self.eyeButton.heightAnchor),
             self.eyeButton.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            self.eyeButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            self.eyeButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
             
-            self.currencyButton.heightAnchor.constraint(greaterThanOrEqualTo: self.contentView.heightAnchor, multiplier: 0.4),
+            self.currencyButton.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.4),
             self.currencyButton.widthAnchor.constraint(lessThanOrEqualToConstant: self.currencyButton.intrinsicContentSize.width),
             self.currencyButton.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            self.currencyButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            self.currencyButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
             
-//            self.amountLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
-//                                                    multiplier: Constants.viewSizeMultiplier),
-            
-//            self.amountLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
             self.amountLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.amountLabel.leadingAnchor.constraint(equalTo: self.eyeButton.trailingAnchor, constant: 20),
             self.amountLabel.trailingAnchor.constraint(equalTo: self.currencyButton.leadingAnchor, constant: -20),
-//
-//            self.describeLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
-//                                                     multiplier: Constants.viewSizeMultiplier),
-//            self.describeLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor),
-//            self.describeLabel.centerXAnchor.constraint(equalTo: self.amountLabel.centerXAnchor),
-//
-//
-//
-
+            
+            self.describeLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
+                                                     multiplier: Constants.viewSizeMultiplier),
+            self.describeLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor),
+            self.describeLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
         ])
     }
     
