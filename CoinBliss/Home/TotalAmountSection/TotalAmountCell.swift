@@ -87,6 +87,7 @@ class TotalAmountCell: UICollectionViewCell {
         if isVisible {
             let formatter = NumberFormatter()
             formatter.numberStyle = .currency
+            formatter.maximumFractionDigits = 0
             formatter.currencySymbol = ""
             formatter.currencyDecimalSeparator = ","
             formatter.currencyGroupingSeparator = " "
