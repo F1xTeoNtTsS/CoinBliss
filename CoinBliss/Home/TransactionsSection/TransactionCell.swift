@@ -18,6 +18,7 @@ final class TransactionCell: UICollectionViewCell {
     
     let categoryLabel: UILabel = {
         let label = UILabel()
+        label.adjustsFontSizeToFitWidth = true
         label.textColor = .darkGray
         label.font = UIFont(name: Resources.Fonts.mainFontName, size: 18)
         return label
@@ -32,6 +33,8 @@ final class TransactionCell: UICollectionViewCell {
     
     let sumLabel: UILabel = {
         let label = UILabel()
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .right
         label.font = UIFont(name: Resources.Fonts.mainFontName, size: 18)
         return label
     }()
@@ -76,15 +79,8 @@ final class TransactionCell: UICollectionViewCell {
     }
     
     private func setupSumLabel(amount: Double, currency: String) {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencySymbol = currency
-        formatter.maximumFractionDigits = 0
-        formatter.currencyDecimalSeparator = ","
-        formatter.currencyGroupingSeparator = " "
+        self.sumLabel.text = "\(amount.kmFormatted) \(currency)"
         
-        let number = NSNumber(value: amount)
-        self.sumLabel.text = formatter.string(from: number)
         self.sumLabel.textColor = amount.isPositive()
         ? Resources.Colors.mainPositiveColor
         : Resources.Colors.mainNegativeColor
@@ -101,25 +97,20 @@ final class TransactionCell: UICollectionViewCell {
             self.categoryImage.widthAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.8),
             self.categoryImage.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.8),
             self.categoryImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            self.categoryImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+            self.categoryImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
             
-            self.sumLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor),
-            self.sumLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            self.sumLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
-            
+            self.stackView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3),
             self.stackView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.stackView.leadingAnchor.constraint(equalTo: self.categoryImage.trailingAnchor, constant: 10),
             
-            separatorView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
-            separatorView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            separatorView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
-            separatorView.heightAnchor.constraint(equalToConstant: 1)
+            self.sumLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+            self.sumLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
+            self.sumLabel.leadingAnchor.constraint(equalTo: self.stackView.trailingAnchor, constant: 20),
+            
+            self.separatorView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+            self.separatorView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            self.separatorView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
+            self.separatorView.heightAnchor.constraint(equalToConstant: 1)
         ])
-    }
-}
-
-private extension Double {
-    func isPositive() -> Bool {
-        return self > 0 ? true : false
     }
 }

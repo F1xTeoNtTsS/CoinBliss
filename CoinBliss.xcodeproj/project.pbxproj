@@ -30,6 +30,7 @@
 		2DD1F9D22947617000A40A10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD1F9D02947617000A40A10 /* LaunchScreen.storyboard */; };
 		2DD861052959A1ED00582775 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD861042959A1ED00582775 /* Transaction.swift */; };
 		2DD861072959B3C200582775 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD861062959B3C200582775 /* UIColor+Extension.swift */; };
+		2DD86109295B415500582775 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD86108295B415500582775 /* Double+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		2DD1F9D32947617000A40A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DD861042959A1ED00582775 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2DD861062959B3C200582775 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		2DD86108295B415500582775 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				2D2BAC4D2957FFA900749520 /* AutoInvalidatingLayout.swift */,
 				2DD861062959B3C200582775 /* UIColor+Extension.swift */,
+				2DD86108295B415500582775 /* Double+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				2DBF8B3B2953505F00A2028C /* TotalAmount.swift in Sources */,
 				2DBE2D7E294C8172003C115E /* TotalAmountCell.swift in Sources */,
+				2DD86109295B415500582775 /* Double+Extension.swift in Sources */,
 				2DBF8B482954544E00A2028C /* TransactionCell.swift in Sources */,
 				2DBE2D76294C7897003C115E /* HomeModel.swift in Sources */,
 				2DBE2D78294C79E1003C115E /* HomeViewModel.swift in Sources */,

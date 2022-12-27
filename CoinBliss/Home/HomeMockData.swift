@@ -17,10 +17,10 @@ final class HomeMockData {
     }()
     
     private let transactions: HomeModel = {
-        let firstFiveTransactions = PaymentStore.shared.lastFiveTransactions()
-        let transactionsPreview = firstFiveTransactions.map {
+        let lastFivePayments = PaymentStore.shared.lastFivePayments()
+        let transactions = lastFivePayments.map {
             Transaction(payment: $0, category: CategoryStore.shared.categoryById($0.categoryId))}
-        return HomeModel.transactionsSection(transactionsPreview)
+        return HomeModel.transactionsSection(transactions)
     }()
     
     static func getRandomDate() -> Date {
