@@ -31,7 +31,7 @@ final class PaymentStore {
                 categoryId: 1, period: .weekly, date: HomeMockData.getRandomDate()),
         Payment(id: 9, amount: 90000, currency: "IDR",
                 categoryId: 4, period: .daily, date: HomeMockData.getRandomDate(), note: "tips"),
-        Payment(id: 10, amount: 900, currency: "IDR",
+        Payment(id: 10, amount: 95000, currency: "IDR",
                 categoryId: 8, period: .weekly, date: HomeMockData.getRandomDate()),
         Payment(id: 11, amount: 100000, currency: "IDR",
                 categoryId: 9, period: .daily, date: HomeMockData.getRandomDate())
@@ -44,7 +44,7 @@ final class PaymentStore {
         let prefix = count >= 5 ? 5 : count
         
         return Array(PaymentStore.shared.payments
-            .sorted(by: {$0.id < $1.id})
+            .sorted(by: {$0.date < $1.date})
             .prefix(upTo: prefix))
     }
 }

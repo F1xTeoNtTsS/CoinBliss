@@ -31,6 +31,9 @@
 		2DD861052959A1ED00582775 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD861042959A1ED00582775 /* Transaction.swift */; };
 		2DD861072959B3C200582775 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD861062959B3C200582775 /* UIColor+Extension.swift */; };
 		2DD86109295B415500582775 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD86108295B415500582775 /* Double+Extension.swift */; };
+		2DD8610D295C752A00582775 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD8610C295C752A00582775 /* Summary.swift */; };
+		2DD86111295C832900582775 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD86110295C832900582775 /* SummaryCell.swift */; };
+		2DD86113295C846100582775 /* HomeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD86112295C846100582775 /* HomeCellProtocol.swift */; };
 		9818E5B4FDC0A2F26F548764 /* Pods_CoinBliss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B9F5DBB78A8B08BE064AD2 /* Pods_CoinBliss.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,9 @@
 		2DD861042959A1ED00582775 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2DD861062959B3C200582775 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2DD86108295B415500582775 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		2DD8610C295C752A00582775 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		2DD86110295C832900582775 /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
+		2DD86112295C846100582775 /* HomeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellProtocol.swift; sourceTree = "<group>"; };
 		A98BC6C9067042778EFCBA01 /* Pods-CoinBliss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinBliss.debug.xcconfig"; path = "Target Support Files/Pods-CoinBliss/Pods-CoinBliss.debug.xcconfig"; sourceTree = "<group>"; };
 		AD7A5FD3567E8FD3C7335CFA /* Pods-CoinBliss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinBliss.release.xcconfig"; path = "Target Support Files/Pods-CoinBliss/Pods-CoinBliss.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,9 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				2DBE2D75294C7897003C115E /* HomeModel.swift */,
+				2DD86112295C846100582775 /* HomeCellProtocol.swift */,
 				2DBE2D77294C79E1003C115E /* HomeViewModel.swift */,
 				2DD1F9C62947616F00A40A10 /* HomeViewController.swift */,
 				2DBE2D7A294C7DF4003C115E /* HomeMockData.swift */,
+				2DD8610B295C751300582775 /* SummarySection */,
 				2DBF8B4329544FCD00A2028C /* TotalAmountSection */,
 				2DBF8B40295429FD00A2028C /* TransactionsSection */,
 				2DD860FD29587A0B00582775 /* Payment */,
@@ -125,10 +133,10 @@
 		2DBF8B40295429FD00A2028C /* TransactionsSection */ = {
 			isa = PBXGroup;
 			children = (
+				2DD861042959A1ED00582775 /* Transaction.swift */,
 				2DBE2D7F294C8190003C115E /* MultiplyTransactionCell.swift */,
 				2DBF8B452954531700A2028C /* TransactionsController.swift */,
 				2DBF8B472954544E00A2028C /* TransactionCell.swift */,
-				2DD861042959A1ED00582775 /* Transaction.swift */,
 			);
 			path = TransactionsSection;
 			sourceTree = "<group>";
@@ -190,6 +198,15 @@
 				2D2BAC4F2958786A00749520 /* PaymentStore.swift */,
 			);
 			path = Payment;
+			sourceTree = "<group>";
+		};
+		2DD8610B295C751300582775 /* SummarySection */ = {
+			isa = PBXGroup;
+			children = (
+				2DD8610C295C752A00582775 /* Summary.swift */,
+				2DD86110295C832900582775 /* SummaryCell.swift */,
+			);
+			path = SummarySection;
 			sourceTree = "<group>";
 		};
 		4FF5A2AA1F9502A611C2F72A /* Frameworks */ = {
@@ -336,11 +353,14 @@
 				2DD1F9CD2947616F00A40A10 /* CoinBliss.xcdatamodeld in Sources */,
 				2DBF8B3D2953508400A2028C /* Payment.swift in Sources */,
 				2DD861072959B3C200582775 /* UIColor+Extension.swift in Sources */,
+				2DD8610D295C752A00582775 /* Summary.swift in Sources */,
+				2DD86113295C846100582775 /* HomeCellProtocol.swift in Sources */,
 				2D2BAC4E2957FFA900749520 /* AutoInvalidatingLayout.swift in Sources */,
 				2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */,
 				2DBF8B3F295429E400A2028C /* CategoryStore.swift in Sources */,
 				2DD1F9C72947616F00A40A10 /* HomeViewController.swift in Sources */,
 				2DBE2D80294C8190003C115E /* MultiplyTransactionCell.swift in Sources */,
+				2DD86111295C832900582775 /* SummaryCell.swift in Sources */,
 				2DD1F9C32947616F00A40A10 /* AppDelegate.swift in Sources */,
 				2DBF8B422954491000A2028C /* Category.swift in Sources */,
 				2DD861052959A1ED00582775 /* Transaction.swift in Sources */,
