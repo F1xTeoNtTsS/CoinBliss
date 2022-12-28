@@ -14,6 +14,7 @@ enum Mode {
 final class TransactionsController: UICollectionViewController {
     
     var transactions: [Transaction] = []
+    var count: Int = 0
     
     private var mode: Mode?
     override var prefersStatusBarHidden: Bool { return true }
@@ -35,7 +36,7 @@ final class TransactionsController: UICollectionViewController {
             navigationController?.isNavigationBarHidden = true
         case .small:
             self.collectionView.isScrollEnabled = false
-        case .none:
+        default:
             break
         }
         

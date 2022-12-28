@@ -61,10 +61,6 @@ final class TransactionCell: UICollectionViewCell {
         self.backgroundColor = .white
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     func setup(_ transaction: Transaction) {
         self.setupCategoryImage(imageName: transaction.category.imageName, hexColor: transaction.category.hexColor)
         self.setupSumLabel(amount: transaction.payment.amount, currency: transaction.payment.currency)
@@ -86,7 +82,7 @@ final class TransactionCell: UICollectionViewCell {
         : Resources.Colors.mainNegativeColor
     }
     
-    private func setViewsLayout() {
+   func setViewsLayout() {
         let views = [self.categoryImage, self.stackView, self.sumLabel, self.separatorView]
         views.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -98,19 +94,23 @@ final class TransactionCell: UICollectionViewCell {
             self.categoryImage.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.8),
             self.categoryImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.categoryImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
-            
+
             self.stackView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3),
             self.stackView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.stackView.leadingAnchor.constraint(equalTo: self.categoryImage.trailingAnchor, constant: 10),
-            
+
             self.sumLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.sumLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
             self.sumLabel.leadingAnchor.constraint(equalTo: self.stackView.trailingAnchor, constant: 20),
-            
+
             self.separatorView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
             self.separatorView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             self.separatorView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
             self.separatorView.heightAnchor.constraint(equalToConstant: 1)
         ])
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

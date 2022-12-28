@@ -38,10 +38,10 @@ class AutoInvalidatingLayout: UICollectionViewFlowLayout {
         guard let collectionView = collectionView else {
             return false
         }
-        
+
         let oldSize = collectionView.bounds.size
         guard oldSize != newBounds.size else { return false }
-        
+
         updateEstimatedItemSize(bounds: newBounds)
         return true
     }
