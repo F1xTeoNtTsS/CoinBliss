@@ -7,5 +7,6 @@
 
 enum HomeModel {    
     case totalAmountSection(TotalAmount)
+    case summarySection([Summary])
     case transactionsSection([Transaction])
 }

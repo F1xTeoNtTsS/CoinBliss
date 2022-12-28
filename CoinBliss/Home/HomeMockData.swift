@@ -23,6 +23,14 @@ final class HomeMockData {
         return HomeModel.transactionsSection(transactions)
     }()
     
+    private let summary: HomeModel = {
+        let summaries: [Summary] = [
+            Summary(kind: .income, period: .month, amount: 555000000, currency: "IDR"),
+            Summary(kind: .expence, period: .today, amount: -300000, currency: "IDR")
+        ]
+        return HomeModel.summarySection(summaries)
+    }()
+    
     static func getRandomDate() -> Date {
         let date = Date()
         let calendar = Calendar.current
@@ -39,6 +47,7 @@ final class HomeMockData {
     
     var data: [HomeModel] {
         [self.totalAmount,
+         self.summary,
          self.transactions]
     }
 }

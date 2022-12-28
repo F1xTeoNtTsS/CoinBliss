@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TransactionCell: UICollectionViewCell {
+final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
     static let cellId = "TransactionCell"
     
     let categoryImage: UIImageView = {
@@ -82,7 +82,7 @@ final class TransactionCell: UICollectionViewCell {
         : Resources.Colors.mainNegativeColor
     }
     
-   func setViewsLayout() {
+   private func setViewsLayout() {
         let views = [self.categoryImage, self.stackView, self.sumLabel, self.separatorView]
         views.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false

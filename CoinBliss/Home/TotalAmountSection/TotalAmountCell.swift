@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TotalAmountCell: UICollectionViewCell {
+class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
     static let cellId = Constants.cellId
     
     private lazy var eyeButton: UIButton = {
@@ -36,9 +36,9 @@ class TotalAmountCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var describeLabel: UILabel = {
+    private lazy var describingLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: Resources.Fonts.mainFontName, size: Constants.describelabelFontSize)
+        label.font = UIFont(name: Resources.Fonts.mainFontName, size: Constants.describinglabelFontSize)
         label.adjustsFontSizeToFitWidth = true
         label.text = "NET BALANCE"
         label.textColor = .white
@@ -106,7 +106,7 @@ class TotalAmountCell: UICollectionViewCell {
     }
     
     private func setViewsLayout() {
-        let views = [self.eyeButton, self.currencyButton, self.amountLabel, self.describeLabel]
+        let views = [self.eyeButton, self.currencyButton, self.amountLabel, self.describingLabel]
         views.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.contentView.addSubview(view)
@@ -128,10 +128,10 @@ class TotalAmountCell: UICollectionViewCell {
             self.amountLabel.leadingAnchor.constraint(equalTo: self.eyeButton.trailingAnchor, constant: 20),
             self.amountLabel.trailingAnchor.constraint(equalTo: self.currencyButton.leadingAnchor, constant: -20),
             
-            self.describeLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
+            self.describingLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
                                                      multiplier: Constants.viewSizeMultiplier),
-            self.describeLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor),
-            self.describeLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
+            self.describingLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor),
+            self.describingLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
         ])
     }
     
@@ -141,6 +141,6 @@ class TotalAmountCell: UICollectionViewCell {
         static let viewSizeMultiplier: CGFloat = 0.7
         static let buttonsCornerRadius: CGFloat = 10
         static let amountLabelFontSize: CGFloat = 30
-        static let describelabelFontSize: CGFloat = 12
+        static let describinglabelFontSize: CGFloat = 12
     }
 }

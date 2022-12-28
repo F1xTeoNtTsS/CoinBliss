@@ -32,6 +32,8 @@ final class HomeViewController: UIViewController {
         
         collectionView.register(TotalAmountCell.self,
                                 forCellWithReuseIdentifier: TotalAmountCell.cellId)
+        collectionView.register(SummaryCell.self,
+                                forCellWithReuseIdentifier: SummaryCell.cellId)
         collectionView.register(MultiplyTransactionCell.self,
                                 forCellWithReuseIdentifier: MultiplyTransactionCell.cellId)
         
@@ -56,6 +58,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch self.viewModel.sections[section] {
+        case .summarySection(let summaries):
+            return summaries.count
         default:
             return 1
         }
@@ -71,12 +75,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             cell.setupCell(totalAmount)
             return cell
-        case .transactionsSection(let transactionsPreview):
+        case .summarySection(let summary):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SummaryCell.cellId,
+                                                                for: indexPath) as? SummaryCell else {
+                return  UICollectionViewCell()
+            }
+            cell.setup(summary[indexPath.row])
+            return cell
+        case .transactionsSection(let transactions):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MultiplyTransactionCell.cellId,
                                                                 for: indexPath) as? MultiplyTransactionCell else {
                 return UICollectionViewCell()
             }
-            cell.setup(transactionsPreview)
+            cell.setup(transactions)
             return cell
         }
     }
@@ -90,6 +101,9 @@ extension HomeViewController {
             switch section {
             case .totalAmountSection:
                 let section = self.layoutTotalAmountSection()
+                return section
+            case .summarySection:
+                let section = self.layoutSummarySection()
                 return section
             case .transactionsSection(let transactions):
                 let section = self.layoutTransactionsSection(transactionsCount: transactions.count)
@@ -105,7 +119,20 @@ extension HomeViewController {
                                                                          heightDimension: .absolute(100)),
                                                        subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 0, leading: 20, bottom: 10, trailing: 20)
+        section.contentInsets = .init(top: 0, leading: 20, bottom: 0, trailing: 20)
+        return section
+    }
+    
+    private func layoutSummarySection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                            heightDimension: .fractionalHeight(1)))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize:
+                .init(widthDimension: .absolute((self.collectionView.frame.width - 60) / 2),
+                      heightDimension: .absolute(100)), subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .paging
+        section.interGroupSpacing = 20
+        section.contentInsets = .init(top: 20, leading: 20, bottom: 0, trailing: 20)
         return section
     }
     
