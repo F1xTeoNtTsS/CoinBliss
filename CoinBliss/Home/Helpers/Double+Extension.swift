@@ -10,15 +10,21 @@ import Foundation
 extension Double {
     var kmFormatted: String {
         if self > 99999999 && self <= 999999999 {
-            return String(format: "%.1fM", locale: .current, self/1000000).replacingOccurrences(of: ".0", with: "")
+            return String(format: "%.1fM",
+                          locale: .current,
+                          self/1000000).replacingOccurrences(of: ".0", with: "")
         }
         
         if self > 999999999 && self <= 999999999999 {
-            return String(format: "%.1fB", locale: .current, self/1000000000).replacingOccurrences(of: ".0", with: "")
+            return String(format: "%.1fB",
+                          locale: .current,
+                          self/1000000000).replacingOccurrences(of: ".0", with: "")
         }
         
         if self > 999999999999 && self <= 999999999999999 {
-            return String(format: "%.1fT", locale: .current, self/1000000000000).replacingOccurrences(of: ".0", with: "")
+            return String(format: "%.1fT",
+                          locale: .current,
+                          self/1000000000000).replacingOccurrences(of: ".0", with: "")
         }
         
         if self > 999999999999999 {

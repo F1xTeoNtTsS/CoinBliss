@@ -30,8 +30,10 @@ final class HomeViewController: UIViewController {
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.makeCollectionViewFlowLayout())
         
-        collectionView.register(TotalAmountCell.self, forCellWithReuseIdentifier: TotalAmountCell.cellId)
-        collectionView.register(MultiplyTransactionCell.self, forCellWithReuseIdentifier: MultiplyTransactionCell.cellId)
+        collectionView.register(TotalAmountCell.self,
+                                forCellWithReuseIdentifier: TotalAmountCell.cellId)
+        collectionView.register(MultiplyTransactionCell.self,
+                                forCellWithReuseIdentifier: MultiplyTransactionCell.cellId)
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -59,18 +61,22 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch self.viewModel.sections[indexPath.section] {
         case .totalAmountSection(let totalAmount):
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TotalAmountCell.cellId,
-                                                          for: indexPath) as! TotalAmountCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TotalAmountCell.cellId,
+                                                                for: indexPath) as? TotalAmountCell else {
+                return  UICollectionViewCell()
+            }
             cell.setupCell(totalAmount)
             return cell
         case .transactionsSection(let transactionsPreview):
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MultiplyTransactionCell.cellId,
-                                                          for: indexPath) as! MultiplyTransactionCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MultiplyTransactionCell.cellId,
+                                                                for: indexPath) as? MultiplyTransactionCell else {
+                return UICollectionViewCell()
+            }
             cell.setup(transactionsPreview)
-            // TODO: - Model for cell with amount and category
             return cell
         }
     }
@@ -78,24 +84,40 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension HomeViewController {
     private func makeCollectionViewFlowLayout() -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
+        UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             guard let self = self else { return nil }
             let section = self.viewModel.sections[sectionIndex]
             switch section {
-            case .totalAmountSection(_):
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100)), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = .init(top: 0, leading: 20, bottom: 10, trailing: 20)
+            case .totalAmountSection:
+                let section = self.layoutTotalAmountSection()
                 return section
             case .transactionsSection(let transactions):
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(CGFloat(70 * transactions.count - 1))), subitems: [item])
-                let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
+                let section = self.layoutTransactionsSection(transactionsCount: transactions.count)
                 return section
             }
         }
+    }
+    
+    private func layoutTotalAmountSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                            heightDimension: .fractionalHeight(1)))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                                         heightDimension: .absolute(100)),
+                                                       subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 20, bottom: 10, trailing: 20)
+        return section
+    }
+    
+    private func layoutTransactionsSection(transactionsCount: Int) -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                            heightDimension: .fractionalHeight(1)))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize:
+                .init(widthDimension: .fractionalWidth(1),
+                      heightDimension: .absolute(CGFloat(70 * transactionsCount - 1))), subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
+        return section
     }
     
     private func setCollectionViewLayout() {

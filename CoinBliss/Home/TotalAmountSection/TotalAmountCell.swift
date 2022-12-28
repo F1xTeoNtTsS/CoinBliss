@@ -119,7 +119,8 @@ class TotalAmountCell: UICollectionViewCell {
             self.eyeButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
             
             self.currencyButton.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.4),
-            self.currencyButton.widthAnchor.constraint(lessThanOrEqualToConstant: self.currencyButton.intrinsicContentSize.width),
+            self.currencyButton.widthAnchor.constraint(lessThanOrEqualToConstant:
+                                                        self.currencyButton.intrinsicContentSize.width),
             self.currencyButton.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.currencyButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
             
@@ -130,7 +131,7 @@ class TotalAmountCell: UICollectionViewCell {
             self.describeLabel.widthAnchor.constraint(lessThanOrEqualTo: self.contentView.widthAnchor,
                                                      multiplier: Constants.viewSizeMultiplier),
             self.describeLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor),
-            self.describeLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            self.describeLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
         ])
     }
     

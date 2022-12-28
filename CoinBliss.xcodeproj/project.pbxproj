@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,9 +31,11 @@
 		2DD861052959A1ED00582775 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD861042959A1ED00582775 /* Transaction.swift */; };
 		2DD861072959B3C200582775 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD861062959B3C200582775 /* UIColor+Extension.swift */; };
 		2DD86109295B415500582775 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD86108295B415500582775 /* Double+Extension.swift */; };
+		9818E5B4FDC0A2F26F548764 /* Pods_CoinBliss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B9F5DBB78A8B08BE064AD2 /* Pods_CoinBliss.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17B9F5DBB78A8B08BE064AD2 /* Pods_CoinBliss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinBliss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2BAC4D2957FFA900749520 /* AutoInvalidatingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInvalidatingLayout.swift; sourceTree = "<group>"; };
 		2D2BAC4F2958786A00749520 /* PaymentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStore.swift; sourceTree = "<group>"; };
 		2DBE2D75294C7897003C115E /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -60,6 +62,8 @@
 		2DD861042959A1ED00582775 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2DD861062959B3C200582775 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2DD86108295B415500582775 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		A98BC6C9067042778EFCBA01 /* Pods-CoinBliss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinBliss.debug.xcconfig"; path = "Target Support Files/Pods-CoinBliss/Pods-CoinBliss.debug.xcconfig"; sourceTree = "<group>"; };
+		AD7A5FD3567E8FD3C7335CFA /* Pods-CoinBliss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinBliss.release.xcconfig"; path = "Target Support Files/Pods-CoinBliss/Pods-CoinBliss.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9818E5B4FDC0A2F26F548764 /* Pods_CoinBliss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +156,8 @@
 			children = (
 				2DD1F9C12947616F00A40A10 /* CoinBliss */,
 				2DD1F9C02947616F00A40A10 /* Products */,
+				FE5E6DAC5D1379A68934E420 /* Pods */,
+				4FF5A2AA1F9502A611C2F72A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +192,23 @@
 			path = Payment;
 			sourceTree = "<group>";
 		};
+		4FF5A2AA1F9502A611C2F72A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17B9F5DBB78A8B08BE064AD2 /* Pods_CoinBliss.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE5E6DAC5D1379A68934E420 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A98BC6C9067042778EFCBA01 /* Pods-CoinBliss.debug.xcconfig */,
+				AD7A5FD3567E8FD3C7335CFA /* Pods-CoinBliss.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DD1F9D62947617000A40A10 /* Build configuration list for PBXNativeTarget "CoinBliss" */;
 			buildPhases = (
+				4F4688C5C886FFBC78902EC9 /* [CP] Check Pods Manifest.lock */,
 				2DD1F9BB2947616F00A40A10 /* Sources */,
 				2DD1F9BC2947616F00A40A10 /* Frameworks */,
 				2DD1F9BD2947616F00A40A10 /* Resources */,
+				2DD8610A295C3D1900582775 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -221,7 +247,7 @@
 				};
 			};
 			buildConfigurationList = 2DD1F9BA2947616F00A40A10 /* Build configuration list for PBXProject "CoinBliss" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -250,6 +276,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DD8610A295C3D1900582775 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		4F4688C5C886FFBC78902EC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinBliss-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DD1F9BB2947616F00A40A10 /* Sources */ = {
@@ -410,6 +479,7 @@
 		};
 		2DD1F9D72947617000A40A10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98BC6C9067042778EFCBA01 /* Pods-CoinBliss.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +510,7 @@
 		};
 		2DD1F9D82947617000A40A10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD7A5FD3567E8FD3C7335CFA /* Pods-CoinBliss.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

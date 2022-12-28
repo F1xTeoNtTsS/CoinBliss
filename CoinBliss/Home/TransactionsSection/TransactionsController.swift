@@ -64,9 +64,12 @@ final class TransactionsController: UICollectionViewController {
         return min(5, transactions.count)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionCell.cellId,
-                                                      for: indexPath) as! TransactionCell
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionCell.cellId,
+                                                            for: indexPath) as? TransactionCell else {
+            return UICollectionViewCell()
+        }
         DispatchQueue.main.async {
             cell.setup(self.transactions[indexPath.row])
         }
@@ -79,7 +82,7 @@ final class TransactionsController: UICollectionViewController {
     
     init(mode: Mode) {
         self.mode = mode
-        super.init(collectionViewLayout: AutoInvalidatingLayout())
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
 
     required init?(coder: NSCoder) {

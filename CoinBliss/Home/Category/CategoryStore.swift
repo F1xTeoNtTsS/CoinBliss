@@ -21,7 +21,7 @@ final class CategoryStore: ObservableObject {
         6: Category(id: 6, name: "Shoping", imageName: "cart.circle.fill", hexColor: "955251"),
         7: Category(id: 7, name: "Food", imageName: "fork.knife.circle.fill", hexColor: "B565A7"),
         8: Category(id: 8, name: "Intertainment", imageName: "theatermasks.circle.fill", hexColor: "009B77"),
-        9: Category(id: 9, name: "Travel", imageName: "airplane.circle.fill", hexColor: "55B4B0"),
+        9: Category(id: 9, name: "Travel", imageName: "airplane.circle.fill", hexColor: "55B4B0")
     ]
     
     private init() {}

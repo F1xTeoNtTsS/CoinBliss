@@ -16,8 +16,7 @@ class AutoInvalidatingLayout: UICollectionViewFlowLayout {
         let insets = collectionView.contentInset
         let width = bounds.width - insets.left - insets.right
         
-        if width < 0 { return 0 }
-        else { return width }
+        return width < 0 ? 0 : width
     }
     
     func updateEstimatedItemSize(bounds: CGRect) {

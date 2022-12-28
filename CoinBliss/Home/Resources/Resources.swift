@@ -13,8 +13,14 @@ enum Resources {
     }
     
     enum Colors {
-        static let mainPositiveColor = UIColor(cgColor: CGColor(srgbRed: (65/255.0), green: (200/255.0), blue: (163/255.0), alpha: 1))
-        static let mainNegativeColor = UIColor(cgColor: CGColor(srgbRed: (220/255.0), green: (50/255.0), blue: (30/255.0), alpha: 1))
+        static let mainPositiveColor = UIColor(cgColor: CGColor(srgbRed: (65/255.0),
+                                                                green: (200/255.0),
+                                                                blue: (163/255.0),
+                                                                alpha: 1))
+        static let mainNegativeColor = UIColor(cgColor: CGColor(srgbRed: (220/255.0),
+                                                                green: (50/255.0),
+                                                                blue: (30/255.0),
+                                                                alpha: 1))
     }
     
     enum Icons {
