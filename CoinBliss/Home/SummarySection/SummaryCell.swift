@@ -16,16 +16,15 @@ class SummaryCell: UICollectionViewCell, HomeCellProtocol {
         label.font = UIFont(name: Resources.Fonts.mainFontName, size: 18)
         label.adjustsFontSizeToFitWidth = true
         label.textColor = .darkGray
-        label.textAlignment = .left
+        label.textAlignment = .center
         return label
     }()
     
     private lazy var sumLabel: UILabel = {
         let label = UILabel()
         label.adjustsFontSizeToFitWidth = true
-        label.textAlignment = .right
+        label.textAlignment = .center
         label.font = UIFont(name: Resources.Fonts.mainFontName, size: 18)
-        label.sizeToFit()
         return label
     }()
     
@@ -35,7 +34,6 @@ class SummaryCell: UICollectionViewCell, HomeCellProtocol {
         label.adjustsFontSizeToFitWidth = true
         label.textColor = .systemGray
         label.textAlignment = .center
-        label.sizeToFit()
         
         return label
     }()
@@ -103,10 +101,10 @@ class SummaryCell: UICollectionViewCell, HomeCellProtocol {
         }
         
         NSLayoutConstraint.activate([
-            self.stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
-            self.stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10),
-            self.stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
-            self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10)
+            self.stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5),
+            self.stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5),
+            self.stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+            self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20)
         ])
     }
     

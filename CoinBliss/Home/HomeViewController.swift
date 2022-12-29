@@ -36,6 +36,9 @@ final class HomeViewController: UIViewController {
                                 forCellWithReuseIdentifier: SummaryCell.cellId)
         collectionView.register(MultiplyTransactionCell.self,
                                 forCellWithReuseIdentifier: MultiplyTransactionCell.cellId)
+        collectionView.register(CollectionViewHeaderReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: "CollectionViewHeaderReusableView")
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -91,9 +94,31 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let header = collectionView
+                .dequeueReusableSupplementaryView(ofKind: kind,
+                                                  withReuseIdentifier: "CollectionViewHeaderReusableView",
+                                                  for: indexPath) as? CollectionViewHeaderReusableView
+            header?.setup(viewModel.sections[indexPath.section].title)
+            return header ?? CollectionViewHeaderReusableView()
+        default:
+            return UICollectionReusableView()
+        }
+    }
 }
 
 extension HomeViewController {
+    private func setCollectionViewLayout() {
+        collectionView.backgroundColor = .clear
+        self.view.addSubview(self.collectionView)
+        self.collectionView.frame = self.view.frame
+    }
+    
     private func makeCollectionViewFlowLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             guard let self = self else { return nil }
@@ -119,7 +144,7 @@ extension HomeViewController {
                                                                          heightDimension: .absolute(100)),
                                                        subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 0, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = .init(top: -10, leading: 20, bottom: 0, trailing: 20)
         return section
     }
     
@@ -128,11 +153,12 @@ extension HomeViewController {
                                                             heightDimension: .fractionalHeight(1)))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize:
                 .init(widthDimension: .absolute((self.collectionView.frame.width - 60) / 2),
-                      heightDimension: .absolute(100)), subitems: [item])
+                      heightDimension: .absolute(90)), subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .paging
         section.interGroupSpacing = 20
-        section.contentInsets = .init(top: 20, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = .init(top: 0, leading: 20, bottom: 10, trailing: 20)
+        section.boundarySupplementaryItems = [self.supplementaryHeaderItem()]
         return section
     }
     
@@ -143,17 +169,14 @@ extension HomeViewController {
                 .init(widthDimension: .fractionalWidth(1),
                       heightDimension: .absolute(CGFloat(70 * transactionsCount - 1))), subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
+        section.contentInsets = .init(top: 0, leading: 20, bottom: 10, trailing: 20)
+        section.boundarySupplementaryItems = [self.supplementaryHeaderItem()]
         return section
     }
     
-    private func setCollectionViewLayout() {
-        collectionView.backgroundColor = .clear
-        self.view.addSubview(self.collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            collectionView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            collectionView.heightAnchor.constraint(equalTo: self.view.heightAnchor)
-        ])
+    private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30)),
+              elementKind: UICollectionView.elementKindSectionHeader,
+              alignment: .topLeading)
     }
 }
