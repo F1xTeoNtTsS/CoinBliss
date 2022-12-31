@@ -77,7 +77,7 @@ final class TransactionsController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: - present full transaction VC logic
+        
     }
     
     init(mode: Mode) {

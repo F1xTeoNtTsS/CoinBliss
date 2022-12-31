@@ -19,7 +19,7 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
     let categoryLabel: UILabel = {
         let label = UILabel()
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = .darkGray
+        label.textColor = Resources.Colors.titleColor
         label.font = UIFont(name: Resources.Fonts.mainFontName, size: 18)
         return label
     }()
@@ -41,7 +41,7 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
     
     let separatorView: UIView = {
         let separatorView = UIView()
-        separatorView.backgroundColor = UIColor(white: 0.2, alpha: 0.2)
+        separatorView.backgroundColor = Resources.Colors.separatorColor
         return separatorView
     }()
     
@@ -58,7 +58,7 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.backgroundColor = .white
+        self.backgroundColor = Resources.Colors.cellMainColor
     }
     
     func setup(_ transaction: Transaction) {
@@ -75,11 +75,12 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
     }
     
     private func setupSumLabel(amount: Double, currency: String) {
-        self.sumLabel.text = "\(amount.kmFormatted) \(currency)"
+        let plus = amount.isPositive ? "+" : ""
+        self.sumLabel.text = "\(plus)\(amount.kmFormatted) \(currency)"
         
-        self.sumLabel.textColor = amount.isPositive()
-        ? Resources.Colors.mainPositiveColor
-        : Resources.Colors.mainNegativeColor
+        self.sumLabel.textColor = amount.isPositive
+        ? Resources.Colors.mainPositiveAmountColor
+        : Resources.Colors.mainNegativeAmountColor
     }
     
    private func setViewsLayout() {

@@ -12,6 +12,7 @@ final class HomeViewController: UIViewController {
     private let viewModel = HomeViewModel()
     
     private let gradientLayer = CAGradientLayer()
+    private let floatingButton = FloatingButton()
     private var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -19,12 +20,26 @@ final class HomeViewController: UIViewController {
         
         setupBackgroundGradient()
         self.setupCollectionView()
+        self.setupFloatingButton()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        self.gradientLayer.frame = self.view.bounds
+        self.setupBackgroundGradient()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let transform = scrollView.contentOffset.y > 0
+        ? CGAffineTransform(translationX: 0, y: 100)
+        : .identity
+        UIView.animate(withDuration: 0.8,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0.7,
+                       options: .curveEaseOut) {
+            self.floatingButton.transform = transform
+        }
     }
     
     private func setupCollectionView() {
@@ -36,9 +51,9 @@ final class HomeViewController: UIViewController {
                                 forCellWithReuseIdentifier: SummaryCell.cellId)
         collectionView.register(MultiplyTransactionCell.self,
                                 forCellWithReuseIdentifier: MultiplyTransactionCell.cellId)
-        collectionView.register(CollectionViewHeaderReusableView.self,
+        collectionView.register(HeaderReusableView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: "CollectionViewHeaderReusableView")
+                                withReuseIdentifier: HeaderReusableView.viewId)
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -46,10 +61,25 @@ final class HomeViewController: UIViewController {
         setCollectionViewLayout()
     }
     
+    private func setupFloatingButton() {
+        self.view.addSubview(floatingButton)
+        self.floatingButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            self.floatingButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.floatingButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            self.floatingButton.heightAnchor.constraint(equalToConstant: 60),
+            self.floatingButton.widthAnchor.constraint(equalToConstant: self.collectionView.frame.width - 80)
+        ])
+        self.floatingButton.applyGradient(colors: [Resources.Colors.mainPositiveColor.cgColor,
+                                                   Resources.Colors.mainNegativeColor.cgColor])
+    }
+    
     private func setupBackgroundGradient() {
+        self.gradientLayer.frame = self.view.bounds
         self.view.backgroundColor = .white
         self.gradientLayer.colors = [Resources.Colors.mainPositiveColor.cgColor,
-                                     UIColor.white.cgColor]
+                                     UIColor.systemGray6.cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
@@ -63,6 +93,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch self.viewModel.sections[section] {
         case .summarySection(let summaries):
             return summaries.count
+        case.transactionsSection:
+            return 1
         default:
             return 1
         }
@@ -102,13 +134,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView
                 .dequeueReusableSupplementaryView(ofKind: kind,
-                                                  withReuseIdentifier: "CollectionViewHeaderReusableView",
-                                                  for: indexPath) as? CollectionViewHeaderReusableView
+                                                  withReuseIdentifier: HeaderReusableView.viewId,
+                                                  for: indexPath) as? HeaderReusableView
             header?.setup(viewModel.sections[indexPath.section].title)
-            return header ?? CollectionViewHeaderReusableView()
+            return header ?? HeaderReusableView()
         default:
             return UICollectionReusableView()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        cell.contentView.layer.masksToBounds = true
+        let radius = cell.contentView.layer.cornerRadius
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: radius).cgPath
     }
 }
 
@@ -144,7 +184,7 @@ extension HomeViewController {
                                                                          heightDimension: .absolute(100)),
                                                        subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: -10, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = .init(top: 0, leading: 20, bottom: 0, trailing: 20)
         return section
     }
     

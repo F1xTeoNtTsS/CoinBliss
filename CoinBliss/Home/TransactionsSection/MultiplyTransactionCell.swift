@@ -18,14 +18,18 @@ class MultiplyTransactionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        clipsToBounds = true
-        layer.cornerRadius = 10
+        self.contentView.backgroundColor = Resources.Colors.cellMainColor
+        self.contentView.layer.cornerRadius = 10
+        
+        self.setDefaultShadow()
         setViewsLayout()
     }
     
     private func setViewsLayout() {
         self.addSubview(transactionsVC.view)
         transactionsVC.view.translatesAutoresizingMaskIntoConstraints = false
+        transactionsVC.view.layer.cornerRadius = 10
+        transactionsVC.view.clipsToBounds = true
 
         NSLayoutConstraint.activate([
             transactionsVC.view.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
@@ -34,7 +38,7 @@ class MultiplyTransactionCell: UICollectionViewCell {
             transactionsVC.view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
         ])
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError()
     }

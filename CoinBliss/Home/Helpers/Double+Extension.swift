@@ -34,7 +34,7 @@ extension Double {
         return String(format: "%.0f", locale: .current, self).replacingOccurrences(of: ",", with: " ")
     }
     
-    func isPositive() -> Bool {
-        return self > 0 ? true : false
+    var isPositive: Bool {
+        return self > 0
     }
 }

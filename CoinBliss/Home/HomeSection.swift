@@ -15,9 +15,9 @@ enum HomeSection {
         case .totalAmountSection:
             return ""
         case .summarySection:
-            return "Summary"
+            return "SUMMARY"
         case .transactionsSection:
-            return "Recent transactions"
+            return "RECENT TRANSACTIONS"
         }
     }
 }

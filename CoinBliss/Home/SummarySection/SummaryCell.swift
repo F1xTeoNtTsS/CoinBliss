@@ -15,7 +15,7 @@ class SummaryCell: UICollectionViewCell, HomeCellProtocol {
         let label = UILabel()
         label.font = UIFont(name: Resources.Fonts.mainFontName, size: 18)
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = .darkGray
+        label.textColor = Resources.Colors.titleColor
         label.textAlignment = .center
         return label
     }()
@@ -40,9 +40,10 @@ class SummaryCell: UICollectionViewCell, HomeCellProtocol {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.contentView.backgroundColor = .white
-        clipsToBounds = true
-        layer.cornerRadius = 10
+        self.contentView.backgroundColor = Resources.Colors.cellMainColor
+        self.contentView.layer.cornerRadius = 10
+        
+        self.setDefaultShadow()
     }
     
     func setup(_ summary: Summary) {
@@ -53,10 +54,11 @@ class SummaryCell: UICollectionViewCell, HomeCellProtocol {
     }
     
     private func setupSumLabel(amount: Double, currency: String, kind: Summary.Kind) {
-        self.sumLabel.text = "\(amount.kmFormatted) \(currency)"
+        let plus = amount.isPositive ? "+" : ""
+        self.sumLabel.text = "\(plus)\(amount.kmFormatted) \(currency)"
         self.sumLabel.textColor = kind == .income
-        ? Resources.Colors.mainPositiveColor
-        : Resources.Colors.mainNegativeColor
+        ? Resources.Colors.mainPositiveAmountColor
+        : Resources.Colors.mainNegativeAmountColor
     }
     
     private func setupDescribingLabel(kind: Summary.Kind) {
@@ -81,7 +83,7 @@ class SummaryCell: UICollectionViewCell, HomeCellProtocol {
         self.periodLabel.text = text
     }
     
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 0

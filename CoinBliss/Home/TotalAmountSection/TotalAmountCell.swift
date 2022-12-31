@@ -14,13 +14,10 @@ class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
         let button = UIButton()
         button.clipsToBounds = true
         button.layer.cornerRadius = Constants.buttonsCornerRadius
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.borderWidth = 1
         
         var configuration = UIButton.Configuration.plain()
         configuration.baseForegroundColor = .white
         configuration.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
-        configuration.background.backgroundColor = Resources.Colors.mainPositiveColor
         button.configuration = configuration
         
         return button
@@ -41,7 +38,7 @@ class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
         label.font = UIFont(name: Resources.Fonts.mainFontName, size: Constants.describinglabelFontSize)
         label.adjustsFontSizeToFitWidth = true
         label.text = "NET BALANCE"
-        label.textColor = .white
+        label.textColor = Resources.Colors.headerTextColor
         label.textAlignment = .center
         
         return label
@@ -51,13 +48,10 @@ class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
         let button = UIButton()
         button.clipsToBounds = true
         button.layer.cornerRadius = Constants.buttonsCornerRadius
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.borderWidth = 1
         
         var configuration = UIButton.Configuration.plain()
         configuration.contentInsets = .init(top: 4, leading: 8, bottom: 4, trailing: 8)
         configuration.baseForegroundColor = .white
-        configuration.background.backgroundColor = Resources.Colors.mainPositiveColor
         button.configuration = configuration
         return button
     }()
