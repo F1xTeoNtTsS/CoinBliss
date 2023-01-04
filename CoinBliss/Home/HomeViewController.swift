@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 final class HomeViewController: UIViewController {
     
     private let viewModel = HomeViewModel()
+    private var cancellables = Set<AnyCancellable>()
     
     private let gradientLayer = CAGradientLayer()
     private let floatingButton = FloatingButton()
@@ -21,6 +23,8 @@ final class HomeViewController: UIViewController {
         setupBackgroundGradient()
         self.setupCollectionView()
         self.setupFloatingButton()
+        
+        self.setupBinders()
     }
     
     override func viewWillLayoutSubviews() {
@@ -40,6 +44,14 @@ final class HomeViewController: UIViewController {
                        options: .curveEaseOut) {
             self.floatingButton.transform = transform
         }
+    }
+    
+    private func setupBinders() {
+        self.viewModel.$sections
+            .sink { [weak self] _ in
+                self?.collectionView.reloadData()
+            }
+            .store(in: &cancellables)
     }
     
     private func setupCollectionView() {
@@ -73,6 +85,7 @@ final class HomeViewController: UIViewController {
         ])
         self.floatingButton.applyGradient(colors: [Resources.Colors.mainPositiveColor.cgColor,
                                                    Resources.Colors.mainNegativeColor.cgColor])
+        self.floatingButton.addTarget(self, action: #selector(pressButton), for: .touchUpInside)
     }
     
     private func setupBackgroundGradient() {
@@ -81,6 +94,10 @@ final class HomeViewController: UIViewController {
         self.gradientLayer.colors = [Resources.Colors.mainPositiveColor.cgColor,
                                      UIColor.systemGray6.cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    @objc func pressButton(button: UIButton) {
+        self.viewModel.fetchData()
     }
 }
 
@@ -108,14 +125,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                                 for: indexPath) as? TotalAmountCell else {
                 return  UICollectionViewCell()
             }
-            cell.setupCell(totalAmount)
+            cell.cellModel = totalAmount
+            cell.eyeButtonTapHandler = self.viewModel.eyeButtonTapped
             return cell
         case .summarySection(let summary):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SummaryCell.cellId,
                                                                 for: indexPath) as? SummaryCell else {
                 return  UICollectionViewCell()
             }
-            cell.setup(summary[indexPath.row])
+            cell.cellModel = summary[indexPath.row]
             return cell
         case .transactionsSection(let transactions):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MultiplyTransactionCell.cellId,

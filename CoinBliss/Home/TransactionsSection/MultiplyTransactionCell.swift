@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MultiplyTransactionCell: UICollectionViewCell {
+final class MultiplyTransactionCell: UICollectionViewCell {
     static let cellId = "MultiplyTransactionCell"
     
     private let transactionsVC = TransactionsController(mode: .small)

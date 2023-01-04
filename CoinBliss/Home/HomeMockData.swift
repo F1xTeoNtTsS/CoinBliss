@@ -12,11 +12,17 @@ final class HomeMockData {
     
     private init() {}
     
-    private let totalAmount: HomeSection = {
-        .totalAmountSection(TotalAmount(balance: 999098570, currency: "IDR", isVisible: true))
+    var totalAmount = TotalAmount(balance: 999098570, currency: "IDR", isVisible: true)
+    
+    func makeSectionForTotalAmount(_ totalAmount: TotalAmount) -> HomeSection {
+        return HomeSection.totalAmountSection(totalAmount)
+    }
+    
+    private var totalAmount2: HomeSection = {
+        .totalAmountSection(TotalAmount(balance: 999098570, currency: "IDR", isVisible: false))
     }()
     
-    private let transactions: HomeSection = {
+    private var transactions: HomeSection = {
         let lastFivePayments = PaymentStore.shared.lastFivePayments()
         let transactions = lastFivePayments.map {
             Transaction(payment: $0, category: CategoryStore.shared.categoryById($0.categoryId))}
@@ -46,7 +52,13 @@ final class HomeMockData {
     }
     
     var data: [HomeSection] {
-        [self.totalAmount,
+        [self.makeSectionForTotalAmount(self.totalAmount),
+         self.summary,
+         self.transactions]
+    }
+    
+    var data2: [HomeSection] {
+        [self.totalAmount2,
          self.summary,
          self.transactions]
     }

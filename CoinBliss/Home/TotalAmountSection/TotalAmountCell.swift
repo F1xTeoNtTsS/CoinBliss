@@ -7,8 +7,16 @@
 
 import UIKit
 
-class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
+final class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
     static let cellId = Constants.cellId
+    var cellModel: TotalAmount? {
+        didSet {
+            guard let cellModel = cellModel else { return }
+            self.setup(cellModel)
+        }
+    }
+    
+    var eyeButtonTapHandler: (() -> Void)?
     
     private lazy var eyeButton: UIButton = {
         let button = UIButton()
@@ -19,9 +27,15 @@ class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
         configuration.baseForegroundColor = .white
         configuration.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
         button.configuration = configuration
+        button.addTarget(self, action: #selector(abc), for: .touchUpInside)
         
         return button
     }()
+    
+    @objc func abc(button: UIButton) {
+        guard let handler = self.eyeButtonTapHandler else { return }
+        handler()
+    }
     
     private lazy var amountLabel: UILabel = {
         let label = UILabel()
@@ -64,7 +78,7 @@ class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(_ totalAmount: TotalAmount) {
+    private func setup(_ totalAmount: TotalAmount) {
         self.setupEyeButton(isVisible: totalAmount.isVisible)
         self.setupAmountTitle(amount: totalAmount.balance, isVisible: totalAmount.isVisible)
         self.setupCurrencyButton(currency: totalAmount.currency)

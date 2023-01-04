@@ -7,9 +7,16 @@
 
 import UIKit
 
-class SummaryCell: UICollectionViewCell, HomeCellProtocol {
+final class SummaryCell: UICollectionViewCell, HomeCellProtocol {
     
     static let cellId = Constants.cellId
+    
+    var cellModel: Summary? {
+        didSet {
+            guard let cellModel = cellModel else { return }
+            self.setup(cellModel)
+        }
+    }
     
     private lazy var periodLabel: UILabel = {
         let label = UILabel()
@@ -46,7 +53,7 @@ class SummaryCell: UICollectionViewCell, HomeCellProtocol {
         self.setDefaultShadow()
     }
     
-    func setup(_ summary: Summary) {
+    private func setup(_ summary: Summary) {
         self.setupSumLabel(amount: summary.amount, currency: summary.currency, kind: summary.kind)
         self.setupDescribingLabel(kind: summary.kind)
         self.setupPeriodLabel(period: summary.period)

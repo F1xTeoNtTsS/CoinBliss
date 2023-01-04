@@ -71,7 +71,7 @@ final class TransactionsController: UICollectionViewController {
             return UICollectionViewCell()
         }
         DispatchQueue.main.async {
-            cell.setup(self.transactions[indexPath.row])
+            cell.cellModel = self.transactions[indexPath.row]
         }
         return cell
     }

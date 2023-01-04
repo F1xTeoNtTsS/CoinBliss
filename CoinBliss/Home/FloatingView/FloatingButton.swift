@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FloatingButton: UIButton {
+final class FloatingButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

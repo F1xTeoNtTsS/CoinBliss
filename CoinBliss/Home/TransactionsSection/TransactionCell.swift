@@ -10,6 +10,13 @@ import UIKit
 final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
     static let cellId = "TransactionCell"
     
+    var cellModel: Transaction? {
+        didSet {
+            guard let cellModel = cellModel else { return }
+            self.setup(cellModel)
+        }
+    }
+    
     let categoryImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -61,7 +68,7 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
         self.backgroundColor = Resources.Colors.cellMainColor
     }
     
-    func setup(_ transaction: Transaction) {
+    private func setup(_ transaction: Transaction) {
         self.setupCategoryImage(imageName: transaction.category.imageName, hexColor: transaction.category.hexColor)
         self.setupSumLabel(amount: transaction.payment.amount, currency: transaction.payment.currency)
         self.categoryLabel.text = transaction.category.name

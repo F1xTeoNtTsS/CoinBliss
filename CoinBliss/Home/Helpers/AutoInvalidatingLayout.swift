@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AutoInvalidatingLayout: UICollectionViewFlowLayout {
+final class AutoInvalidatingLayout: UICollectionViewFlowLayout {
     func widestCellWidth(bounds: CGRect) -> CGFloat {
         guard let collectionView = collectionView else {
             return 0

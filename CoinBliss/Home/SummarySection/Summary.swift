@@ -13,10 +13,10 @@ struct Summary {
         case expence
     }
     
-    let kind: Kind
-    let period: Period
-    let amount: Double
-    let currency: String
+    var kind: Kind
+    var period: Period
+    var amount: Double
+    var currency: String
     
     enum Period {
         case today
