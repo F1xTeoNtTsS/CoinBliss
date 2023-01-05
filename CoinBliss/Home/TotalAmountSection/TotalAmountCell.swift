@@ -7,16 +7,21 @@
 
 import UIKit
 
+protocol TotalAmountCellDelegate: AnyObject {
+    func handleTapOnEyeButton()
+}
+
 final class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
     static let cellId = Constants.cellId
+    
+    weak var delegate: TotalAmountCellDelegate?
+    
     var cellModel: TotalAmount? {
         didSet {
             guard let cellModel = cellModel else { return }
             self.setup(cellModel)
         }
     }
-    
-    var eyeButtonTapHandler: (() -> Void)?
     
     private lazy var eyeButton: UIButton = {
         let button = UIButton()
@@ -27,14 +32,13 @@ final class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
         configuration.baseForegroundColor = .white
         configuration.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
         button.configuration = configuration
-        button.addTarget(self, action: #selector(abc), for: .touchUpInside)
+        button.addTarget(self, action: #selector(eyeButtonTapped), for: .touchUpInside)
         
         return button
     }()
     
-    @objc func abc(button: UIButton) {
-        guard let handler = self.eyeButtonTapHandler else { return }
-        handler()
+    @objc func eyeButtonTapped(button: UIButton) {
+        self.delegate?.handleTapOnEyeButton()
     }
     
     private lazy var amountLabel: UILabel = {

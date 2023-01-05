@@ -11,10 +11,10 @@ import Combine
 final class HomeViewController: UIViewController {
     
     private let viewModel = HomeViewModel()
-    private var cancellables = Set<AnyCancellable>()
-    
     private let gradientLayer = CAGradientLayer()
     private let floatingButton = FloatingButton()
+    
+    private var cancellables = Set<AnyCancellable>()
     private var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -97,7 +97,6 @@ final class HomeViewController: UIViewController {
     }
     
     @objc func pressButton(button: UIButton) {
-        self.viewModel.fetchData()
     }
 }
 
@@ -110,8 +109,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch self.viewModel.sections[section] {
         case .summarySection(let summaries):
             return summaries.count
-        case.transactionsSection:
-            return 1
         default:
             return 1
         }
@@ -126,7 +123,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 return  UICollectionViewCell()
             }
             cell.cellModel = totalAmount
-            cell.eyeButtonTapHandler = self.viewModel.eyeButtonTapped
+            cell.delegate = self
             return cell
         case .summarySection(let summary):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SummaryCell.cellId,
@@ -236,5 +233,11 @@ extension HomeViewController {
         .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30)),
               elementKind: UICollectionView.elementKindSectionHeader,
               alignment: .topLeading)
+    }
+}
+
+extension HomeViewController: TotalAmountCellDelegate {
+    func handleTapOnEyeButton() {
+        self.viewModel.eyeButtonTapped()
     }
 }
