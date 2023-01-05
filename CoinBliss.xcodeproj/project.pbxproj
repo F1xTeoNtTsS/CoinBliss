@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D2BAC4E2957FFA900749520 /* AutoInvalidatingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BAC4D2957FFA900749520 /* AutoInvalidatingLayout.swift */; };
 		2D2BAC502958786A00749520 /* PaymentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BAC4F2958786A00749520 /* PaymentStore.swift */; };
 		2DAF63162966D5F3005DD72A /* HomeSectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAF63152966D5F3005DD72A /* HomeSectionService.swift */; };
+		2DAF63252966E319005DD72A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAF63242966E319005DD72A /* BaseViewController.swift */; };
+		2DAF63282966E393005DD72A /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAF63272966E393005DD72A /* Assembly.swift */; };
+		2DAF632A2966E3AE005DD72A /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAF63292966E3AE005DD72A /* MainRouter.swift */; };
+		2DAF632C2966E413005DD72A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAF632B2966E413005DD72A /* HomeRouter.swift */; };
 		2DBE2D76294C7897003C115E /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D75294C7897003C115E /* HomeSection.swift */; };
 		2DBE2D78294C79E1003C115E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D77294C79E1003C115E /* HomeViewModel.swift */; };
 		2DBE2D7B294C7DF4003C115E /* HomeMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE2D7A294C7DF4003C115E /* HomeMockData.swift */; };
@@ -43,9 +46,12 @@
 
 /* Begin PBXFileReference section */
 		17B9F5DBB78A8B08BE064AD2 /* Pods_CoinBliss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinBliss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D2BAC4D2957FFA900749520 /* AutoInvalidatingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoInvalidatingLayout.swift; sourceTree = "<group>"; };
 		2D2BAC4F2958786A00749520 /* PaymentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStore.swift; sourceTree = "<group>"; };
 		2DAF63152966D5F3005DD72A /* HomeSectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionService.swift; sourceTree = "<group>"; };
+		2DAF63242966E319005DD72A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2DAF63272966E393005DD72A /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		2DAF63292966E3AE005DD72A /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		2DAF632B2966E413005DD72A /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		2DBE2D75294C7897003C115E /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		2DBE2D77294C79E1003C115E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2DBE2D7A294C7DF4003C115E /* HomeMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockData.swift; sourceTree = "<group>"; };
@@ -95,7 +101,7 @@
 		2D2BAC4C2957FF8300749520 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				2D2BAC4D2957FFA900749520 /* AutoInvalidatingLayout.swift */,
+				2DAF63242966E319005DD72A /* BaseViewController.swift */,
 				2DD861062959B3C200582775 /* UIColor+Extension.swift */,
 				2DD8611929603F1F00582775 /* UIView+Extension.swift */,
 				2DD86108295B415500582775 /* Double+Extension.swift */,
@@ -120,9 +126,20 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		2DAF63262966E379005DD72A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2DAF63272966E393005DD72A /* Assembly.swift */,
+				2DAF63292966E3AE005DD72A /* MainRouter.swift */,
+				2DAF632B2966E413005DD72A /* HomeRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		2DBE2D79294C7AC8003C115E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2DAF63262966E379005DD72A /* Navigation */,
 				2DAF63132966D5AA005DD72A /* Services */,
 				2DBE2D75294C7897003C115E /* HomeSection.swift */,
 				2DD86112295C846100582775 /* HomeCellProtocol.swift */,
@@ -379,23 +396,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DBF8B3B2953505F00A2028C /* TotalAmount.swift in Sources */,
+				2DAF63282966E393005DD72A /* Assembly.swift in Sources */,
 				2DBE2D7E294C8172003C115E /* TotalAmountCell.swift in Sources */,
 				2DD86109295B415500582775 /* Double+Extension.swift in Sources */,
 				2DBF8B482954544E00A2028C /* TransactionCell.swift in Sources */,
 				2DBE2D76294C7897003C115E /* HomeSection.swift in Sources */,
+				2DAF63252966E319005DD72A /* BaseViewController.swift in Sources */,
 				2DBE2D78294C79E1003C115E /* HomeViewModel.swift in Sources */,
 				2DD86118295DA04100582775 /* FloatingButton.swift in Sources */,
 				2DD8611A29603F1F00582775 /* UIView+Extension.swift in Sources */,
 				2D2BAC502958786A00749520 /* PaymentStore.swift in Sources */,
 				2DBF8B462954531700A2028C /* TransactionsController.swift in Sources */,
+				2DAF632C2966E413005DD72A /* HomeRouter.swift in Sources */,
 				2DD1F9CD2947616F00A40A10 /* CoinBliss.xcdatamodeld in Sources */,
 				2DBF8B3D2953508400A2028C /* Payment.swift in Sources */,
 				2DD861072959B3C200582775 /* UIColor+Extension.swift in Sources */,
 				2DD8610D295C752A00582775 /* Summary.swift in Sources */,
 				2DD86113295C846100582775 /* HomeCellProtocol.swift in Sources */,
-				2D2BAC4E2957FFA900749520 /* AutoInvalidatingLayout.swift in Sources */,
 				2DBF8B3729533CBB00A2028C /* Resources.swift in Sources */,
 				2DBF8B3F295429E400A2028C /* CategoryStore.swift in Sources */,
+				2DAF632A2966E3AE005DD72A /* MainRouter.swift in Sources */,
 				2DD1F9C72947616F00A40A10 /* HomeViewController.swift in Sources */,
 				2DBE2D80294C8190003C115E /* MultiplyTransactionCell.swift in Sources */,
 				2DD86111295C832900582775 /* SummaryCell.swift in Sources */,

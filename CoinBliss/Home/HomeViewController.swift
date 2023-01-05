@@ -8,9 +8,9 @@
 import UIKit
 import Combine
 
-final class HomeViewController: UIViewController {
+final class HomeViewController: BaseViewController<HomeViewModel> {
+    var router: HomeRouter?
     
-    private let viewModel = HomeViewModel()
     private let gradientLayer = CAGradientLayer()
     private let floatingButton = FloatingButton()
     
@@ -46,12 +46,12 @@ final class HomeViewController: UIViewController {
         }
     }
     
-    private func setupBinders() {
-        self.viewModel.$sections
-            .sink { [weak self] _ in
-                self?.collectionView.reloadData()
-            }
-            .store(in: &cancellables)
+    private func setupBackgroundGradient() {
+        self.gradientLayer.frame = self.view.bounds
+        self.view.backgroundColor = .white
+        self.gradientLayer.colors = [Resources.Colors.mainPositiveColor.cgColor,
+                                     UIColor.systemGray6.cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     private func setupCollectionView() {
@@ -88,15 +88,16 @@ final class HomeViewController: UIViewController {
         self.floatingButton.addTarget(self, action: #selector(pressButton), for: .touchUpInside)
     }
     
-    private func setupBackgroundGradient() {
-        self.gradientLayer.frame = self.view.bounds
-        self.view.backgroundColor = .white
-        self.gradientLayer.colors = [Resources.Colors.mainPositiveColor.cgColor,
-                                     UIColor.systemGray6.cgColor]
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
+    private func setupBinders() {
+        self.viewModel.$sections
+            .sink { [weak self] _ in
+                self?.collectionView.reloadData()
+            }
+            .store(in: &cancellables)
     }
     
     @objc func pressButton(button: UIButton) {
+        
     }
 }
 
