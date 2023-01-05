@@ -7,5 +7,6 @@ target 'CoinBliss' do
 
   # Pods for CoinBliss
   pod 'SwiftLint'
+  pod 'CombineCocoa'
 
 end

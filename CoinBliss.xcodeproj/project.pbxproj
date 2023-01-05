@@ -291,6 +291,7 @@
 				2DD1F9BC2947616F00A40A10 /* Frameworks */,
 				2DD1F9BD2947616F00A40A10 /* Resources */,
 				2DD8610A295C3D1900582775 /* ShellScript */,
+				104A28906CE878D0B9DC380D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,6 +349,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		104A28906CE878D0B9DC380D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinBliss/Pods-CoinBliss-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinBliss/Pods-CoinBliss-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinBliss/Pods-CoinBliss-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2DD8610A295C3D1900582775 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;

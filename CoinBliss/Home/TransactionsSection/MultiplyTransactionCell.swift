@@ -23,6 +23,8 @@ final class MultiplyTransactionCell: UICollectionViewCell {
         
         self.setDefaultShadow()
         setViewsLayout()
+        
+        self.transactionsVC.view.isUserInteractionEnabled = false
     }
     
     private func setViewsLayout() {

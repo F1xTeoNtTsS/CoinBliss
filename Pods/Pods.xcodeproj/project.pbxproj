@@ -20,13 +20,52 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		256F6034DF377E63BB164BF2667A7E89 /* Pods-CoinBliss-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D52C2E488F34C5D18AA3D61303B0039 /* Pods-CoinBliss-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2CAF962D99C72D40B399E2F9511DDA68 /* Pods-CoinBliss-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B03F3D275DFE174AB02F4FDBF51B77 /* Pods-CoinBliss-dummy.m */; };
-		A6023E0F91DFC6A7FEC43E3CC5BA9728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		006ECFE6E7A6C6E9590EBC72D069CF9A /* UISearchBar+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA70B104C40DE996D1C096AB3EACCD /* UISearchBar+Combine.swift */; };
+		010CB9EBC3CD34143A0D5621259FC247 /* UITableView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6140A5A48DE293E4DC1E13DB659E01 /* UITableView+Combine.swift */; };
+		0D4DAE11442AF4A7434D168E51C953A7 /* UISlider+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816566F64F946737DB8CD863DD0DADAF /* UISlider+Combine.swift */; };
+		0EFE2906CD5C3CD00BC157119B36AEE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */; };
+		1905960C59EFC6E183BDF393D8FFC96D /* Pods-CoinBliss-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5FDE5BBFE82BDA93125B5D560ABCE1F /* Pods-CoinBliss-dummy.m */; };
+		22C9774F5D64C609FF226079DDE49F4D /* UIGestureRecognizer+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A1B30DCF5D59181CA8EB2B156AC02 /* UIGestureRecognizer+Combine.swift */; };
+		2697E3C306A6B0A2E74B6115884A2FD9 /* UIRefreshControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F58F8F4F3BAF9127B1B633DE762DB55 /* UIRefreshControl+Combine.swift */; };
+		349CB78BC37D5D31FE6EFF35CB9CEF48 /* UIPageControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A3A9707E0719466E2E88FA8D3D5F16 /* UIPageControl+Combine.swift */; };
+		3EA3A195C2A23E8C06DE3C629B1063EA /* CombineControlTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0E31766953D3051E5AE31E620E185 /* CombineControlTarget.swift */; };
+		506071D61A1CF654A3DAC6CA0356F602 /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE28AB07507B16AD6D6172C27B853CE /* UISwitch+Combine.swift */; };
+		5E8FE161D99CCAA38C3A103B2FEA9603 /* CombineControlProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B85A0DD1CA731302C65711C757E00F /* CombineControlProperty.swift */; };
+		67A31ED8F1E494D19EA0BC90E66BBE8B /* CombineCocoa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C49C223CB0F81C954374AF5D7A9DB009 /* CombineCocoa-dummy.m */; };
+		6F8A5E00682F90BB02A6DCBA549C6A83 /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24803233171F6680C1F5118862735AFF /* DelegateProxy.swift */; };
+		72667F8031A752DE6BAE2B6EA1A69D6B /* ObjcDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0589D05B81A7647C81A5EDFDF8760031 /* ObjcDelegateProxy.m */; };
+		7D9841F7C6F14DCE8E6F12AB90A15D67 /* UICollectionView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B874BDB0D03D81E1CE9AF1B24E10C9CB /* UICollectionView+Combine.swift */; };
+		86FA00447A25100583972DA500704CE8 /* CombineCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = A4D852742C45AD8ED1670D98B31F0826 /* CombineCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D085421550BFDB6E322EADAB1D59469 /* UITextView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365AA9DAA2AC30D46C89FE07C1811F88 /* UITextView+Combine.swift */; };
+		8F46F082E10DAA4130EF048386DCC4E2 /* CombineControlEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B3A1CF158187BD37E6B2FCF215906 /* CombineControlEvent.swift */; };
+		90B3132953A4A95988795FEA40CB8D73 /* AnimatedAssignSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60FA592FE6704E77C207F24101EEFFB /* AnimatedAssignSubscriber.swift */; };
+		9B924A1C934133544BB8EEE4050C46C8 /* CombineCocoa-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A115D355170041C9B03019EBC915FC5 /* CombineCocoa-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FB7135998F4375EAA8C7F65D7A823CC /* UIDatePicker+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E16BA1AC88408FFC9E041A1488E2D3 /* UIDatePicker+Combine.swift */; };
+		A2C26EEF75257126205734AC7E7DE293 /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C472C0EE8D14C36EE0BC1F719DAD05 /* UIButton+Combine.swift */; };
+		B3DF8C0806F3F9FE7D315FE6FA5FC955 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */; };
+		B93ECE7E6FA8F7BBDABEA54BA9D5AAED /* Pods-CoinBliss-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C13288532C2E98CC9B06CB78A013B1CB /* Pods-CoinBliss-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9EBF80001D5B90BB6B1336150E109DF /* UISegmentedControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2519652BB699456146880DCFA61C9E97 /* UISegmentedControl+Combine.swift */; };
+		CA89EFCF041F26A422A1B47DA217FA5F /* UITextField+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32017CC0E46C5FB68A33BCC57364D16D /* UITextField+Combine.swift */; };
+		CC7F70665A05BC2A86BE57E7DDA98D93 /* UIScrollView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F08675C3585BB67138EB7611F87E13 /* UIScrollView+Combine.swift */; };
+		CF694B63B32C750760F7A8AED371A3D2 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7375A81860FC8096B64A8F25B9DAFB77 /* Combine.framework */; };
+		CFEEB8CA63DD6FC63C8E9F0C404C9BDE /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1297AA7A4E3E1F41EB293BA328FCB55 /* UIControl+Combine.swift */; };
+		D58FD7769C5012B7F7B9AEA98AE7FBD5 /* UIStepper+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B41E6B45C434BDB566D6309038B4D9 /* UIStepper+Combine.swift */; };
+		D7EF4ACEFD04C4F66598E2C0D6F02ECB /* NSTextStorage+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B92EAE8B66AEF32AD5A46AB0C4DA855 /* NSTextStorage+Combine.swift */; };
+		DE36EF815D89A15373D1A490437640B7 /* DelegateProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E411E813FA1E7925FB7BACA05AAC74 /* DelegateProxyType.swift */; };
+		E54635A4D8F535BA9FCA47A2D84CADA4 /* DelegateProxyPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECD3A55919A03AF229973B0FB2F99F /* DelegateProxyPublisher.swift */; };
+		F2C9B2DA1AE25185DFF1DE23CF7840FF /* ObjcDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 66D2226919B5E33885EED69DCC0A7AC0 /* ObjcDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB64DC8A847B473AAB0A4795FDCD9DDC /* UIBarButtonItem+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14539C2687C0D0EFAC78EF9B1ED8B6 /* UIBarButtonItem+Combine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		75B5ABBCDDE4B695E581B9351C973F6C /* PBXContainerItemProxy */ = {
+		B1BB8A009B294B33A89C774AA5BFE8CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C11E051A417486DA3B63E1333BABA34;
+			remoteInfo = CombineCocoa;
+		};
+		DB6C455B78AF4E2C6FC3AFF76F889A3E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -36,126 +75,238 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		114EBEA0BC7D29F6B692E4B679FC02FE /* Pods-CoinBliss-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoinBliss-Info.plist"; sourceTree = "<group>"; };
-		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
-		45F5EEDA13DFE4B47DA1229804D3061C /* Pods-CoinBliss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoinBliss.debug.xcconfig"; sourceTree = "<group>"; };
-		6D1F22664F76C413591B1C634D0756F5 /* Pods-CoinBliss.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CoinBliss.modulemap"; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		03410BE3BD13928FC0D1F95878721210 /* CombineCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CombineCocoa.release.xcconfig; sourceTree = "<group>"; };
+		0589D05B81A7647C81A5EDFDF8760031 /* ObjcDelegateProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObjcDelegateProxy.m; path = Sources/Runtime/ObjcDelegateProxy.m; sourceTree = "<group>"; };
+		07A3A9707E0719466E2E88FA8D3D5F16 /* UIPageControl+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIPageControl+Combine.swift"; path = "Sources/CombineCocoa/Controls/UIPageControl+Combine.swift"; sourceTree = "<group>"; };
+		0A40F254D0183841B7030DA4B9CAAB7C /* CombineCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CombineCocoa.debug.xcconfig; sourceTree = "<group>"; };
+		0B92EAE8B66AEF32AD5A46AB0C4DA855 /* NSTextStorage+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSTextStorage+Combine.swift"; path = "Sources/CombineCocoa/Controls/NSTextStorage+Combine.swift"; sourceTree = "<group>"; };
+		149B3A1CF158187BD37E6B2FCF215906 /* CombineControlEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineControlEvent.swift; path = Sources/CombineCocoa/CombineControlEvent.swift; sourceTree = "<group>"; };
+		1A115D355170041C9B03019EBC915FC5 /* CombineCocoa-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CombineCocoa-umbrella.h"; sourceTree = "<group>"; };
+		1B816C295C89521349EBFB4473A776E4 /* Pods-CoinBliss-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoinBliss-acknowledgements.plist"; sourceTree = "<group>"; };
+		1E1664BF296E17501377CB2693864619 /* Pods-CoinBliss-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoinBliss-frameworks.sh"; sourceTree = "<group>"; };
+		24803233171F6680C1F5118862735AFF /* DelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelegateProxy.swift; path = Sources/CombineCocoa/DelegateProxy/DelegateProxy.swift; sourceTree = "<group>"; };
+		2519652BB699456146880DCFA61C9E97 /* UISegmentedControl+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISegmentedControl+Combine.swift"; path = "Sources/CombineCocoa/Controls/UISegmentedControl+Combine.swift"; sourceTree = "<group>"; };
+		32017CC0E46C5FB68A33BCC57364D16D /* UITextField+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Combine.swift"; path = "Sources/CombineCocoa/Controls/UITextField+Combine.swift"; sourceTree = "<group>"; };
+		325FCEB2DD3E45F589D8E4FCD38C6369 /* Pods-CoinBliss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoinBliss.debug.xcconfig"; sourceTree = "<group>"; };
+		365AA9DAA2AC30D46C89FE07C1811F88 /* UITextView+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Combine.swift"; path = "Sources/CombineCocoa/Controls/UITextView+Combine.swift"; sourceTree = "<group>"; };
+		38F08675C3585BB67138EB7611F87E13 /* UIScrollView+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Combine.swift"; path = "Sources/CombineCocoa/Controls/UIScrollView+Combine.swift"; sourceTree = "<group>"; };
+		45E16BA1AC88408FFC9E041A1488E2D3 /* UIDatePicker+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDatePicker+Combine.swift"; path = "Sources/CombineCocoa/Controls/UIDatePicker+Combine.swift"; sourceTree = "<group>"; };
+		5C2663E57F322F2B4D10268264268ECE /* Pods-CoinBliss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoinBliss.release.xcconfig"; sourceTree = "<group>"; };
+		5F58F8F4F3BAF9127B1B633DE762DB55 /* UIRefreshControl+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIRefreshControl+Combine.swift"; path = "Sources/CombineCocoa/Controls/UIRefreshControl+Combine.swift"; sourceTree = "<group>"; };
+		66D2226919B5E33885EED69DCC0A7AC0 /* ObjcDelegateProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjcDelegateProxy.h; path = Sources/Runtime/include/ObjcDelegateProxy.h; sourceTree = "<group>"; };
+		7375A81860FC8096B64A8F25B9DAFB77 /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Combine.framework; sourceTree = DEVELOPER_DIR; };
+		7564EFB802210D4EFB2F2FA36561113D /* CombineCocoa.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CombineCocoa.modulemap; sourceTree = "<group>"; };
 		78A6015911CEAC694B07318D2EC8DD44 /* Pods-CoinBliss */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CoinBliss"; path = Pods_CoinBliss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
-		9419B987CE21EFBA7C77E073370142FE /* Pods-CoinBliss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoinBliss.release.xcconfig"; sourceTree = "<group>"; };
-		9D52C2E488F34C5D18AA3D61303B0039 /* Pods-CoinBliss-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoinBliss-umbrella.h"; sourceTree = "<group>"; };
+		7C1FF1E3C8BF9BEA2B7A950A4F2EA643 /* Pods-CoinBliss-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoinBliss-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7F7834B9C45F4BDCCF7FB950C27EA069 /* Pods-CoinBliss.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CoinBliss.modulemap"; sourceTree = "<group>"; };
+		80F0E31766953D3051E5AE31E620E185 /* CombineControlTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineControlTarget.swift; path = Sources/CombineCocoa/CombineControlTarget.swift; sourceTree = "<group>"; };
+		816566F64F946737DB8CD863DD0DADAF /* UISlider+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISlider+Combine.swift"; path = "Sources/CombineCocoa/Controls/UISlider+Combine.swift"; sourceTree = "<group>"; };
+		984A1B30DCF5D59181CA8EB2B156AC02 /* UIGestureRecognizer+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIGestureRecognizer+Combine.swift"; path = "Sources/CombineCocoa/Controls/UIGestureRecognizer+Combine.swift"; sourceTree = "<group>"; };
+		9D48C098FF028F7AA20B092112AE8CFE /* Pods-CoinBliss-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoinBliss-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E1F6F14ADD1A904F308E66AE6D9633EE /* Pods-CoinBliss-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoinBliss-acknowledgements.plist"; sourceTree = "<group>"; };
-		E4B03F3D275DFE174AB02F4FDBF51B77 /* Pods-CoinBliss-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoinBliss-dummy.m"; sourceTree = "<group>"; };
-		FD2E1B272F128B60DF312B8E8EF2F970 /* Pods-CoinBliss-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoinBliss-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9DECD3A55919A03AF229973B0FB2F99F /* DelegateProxyPublisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelegateProxyPublisher.swift; path = Sources/CombineCocoa/DelegateProxy/DelegateProxyPublisher.swift; sourceTree = "<group>"; };
+		9E3AE83C30945452F175DD6CD3A5DC51 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		9F14539C2687C0D0EFAC78EF9B1ED8B6 /* UIBarButtonItem+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Combine.swift"; path = "Sources/CombineCocoa/Controls/UIBarButtonItem+Combine.swift"; sourceTree = "<group>"; };
+		9F6140A5A48DE293E4DC1E13DB659E01 /* UITableView+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Combine.swift"; path = "Sources/CombineCocoa/Controls/UITableView+Combine.swift"; sourceTree = "<group>"; };
+		A4D852742C45AD8ED1670D98B31F0826 /* CombineCocoa.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CombineCocoa.h; path = Sources/CombineCocoa/CombineCocoa.h; sourceTree = "<group>"; };
+		A5FDE5BBFE82BDA93125B5D560ABCE1F /* Pods-CoinBliss-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoinBliss-dummy.m"; sourceTree = "<group>"; };
+		ACF08AF85FECD5F9135F8FD2B894BFF4 /* CombineCocoa-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CombineCocoa-Info.plist"; sourceTree = "<group>"; };
+		B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B2B41E6B45C434BDB566D6309038B4D9 /* UIStepper+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStepper+Combine.swift"; path = "Sources/CombineCocoa/Controls/UIStepper+Combine.swift"; sourceTree = "<group>"; };
+		B6B85A0DD1CA731302C65711C757E00F /* CombineControlProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineControlProperty.swift; path = Sources/CombineCocoa/CombineControlProperty.swift; sourceTree = "<group>"; };
+		B874BDB0D03D81E1CE9AF1B24E10C9CB /* UICollectionView+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Combine.swift"; path = "Sources/CombineCocoa/Controls/UICollectionView+Combine.swift"; sourceTree = "<group>"; };
+		C13288532C2E98CC9B06CB78A013B1CB /* Pods-CoinBliss-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoinBliss-umbrella.h"; sourceTree = "<group>"; };
+		C49C223CB0F81C954374AF5D7A9DB009 /* CombineCocoa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CombineCocoa-dummy.m"; sourceTree = "<group>"; };
+		CBBA70B104C40DE996D1C096AB3EACCD /* UISearchBar+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISearchBar+Combine.swift"; path = "Sources/CombineCocoa/Controls/UISearchBar+Combine.swift"; sourceTree = "<group>"; };
+		D8C472C0EE8D14C36EE0BC1F719DAD05 /* UIButton+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Combine.swift"; path = "Sources/CombineCocoa/Controls/UIButton+Combine.swift"; sourceTree = "<group>"; };
+		DAAC9A9951789BFA7D1CD276C02F92C7 /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		E04E14711E3B1B3747996B5CD1E8D68B /* CombineCocoa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CombineCocoa-prefix.pch"; sourceTree = "<group>"; };
+		E1297AA7A4E3E1F41EB293BA328FCB55 /* UIControl+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Combine.swift"; path = "Sources/CombineCocoa/Controls/UIControl+Combine.swift"; sourceTree = "<group>"; };
+		E3E411E813FA1E7925FB7BACA05AAC74 /* DelegateProxyType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelegateProxyType.swift; path = Sources/CombineCocoa/DelegateProxy/DelegateProxyType.swift; sourceTree = "<group>"; };
+		E60FA592FE6704E77C207F24101EEFFB /* AnimatedAssignSubscriber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedAssignSubscriber.swift; path = Sources/CombineCocoa/AnimatedAssignSubscriber.swift; sourceTree = "<group>"; };
+		EAC91070C4196357785C6A157C24782A /* CombineCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE28AB07507B16AD6D6172C27B853CE /* UISwitch+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISwitch+Combine.swift"; path = "Sources/CombineCocoa/Controls/UISwitch+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E1C924DBD8C0823299B0CB1E0CE9B3AE /* Frameworks */ = {
+		1564A426E3508EAEC8910125D6236763 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6023E0F91DFC6A7FEC43E3CC5BA9728 /* Foundation.framework in Frameworks */,
+				CF694B63B32C750760F7A8AED371A3D2 /* Combine.framework in Frameworks */,
+				0EFE2906CD5C3CD00BC157119B36AEE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B3D5D0933ED8AA0E49E02A43C31EDC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3DF8C0806F3F9FE7D315FE6FA5FC955 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		49D3AE98CA674C70718508BE6E0E7117 /* Products */ = {
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78A6015911CEAC694B07318D2EC8DD44 /* Pods-CoinBliss */,
+				AA581D828EDF08531495EFA1CB2616BC /* iOS */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		534BDC35B9908EECD5789912840319D7 /* Targets Support Files */ = {
+		1CF56A8F00C75D70CA321D261C96DEA0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8EF61A726319844C37BE6D43E948A4E1 /* Pods-CoinBliss */,
+				7564EFB802210D4EFB2F2FA36561113D /* CombineCocoa.modulemap */,
+				C49C223CB0F81C954374AF5D7A9DB009 /* CombineCocoa-dummy.m */,
+				ACF08AF85FECD5F9135F8FD2B894BFF4 /* CombineCocoa-Info.plist */,
+				E04E14711E3B1B3747996B5CD1E8D68B /* CombineCocoa-prefix.pch */,
+				1A115D355170041C9B03019EBC915FC5 /* CombineCocoa-umbrella.h */,
+				0A40F254D0183841B7030DA4B9CAAB7C /* CombineCocoa.debug.xcconfig */,
+				03410BE3BD13928FC0D1F95878721210 /* CombineCocoa.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CombineCocoa";
+			sourceTree = "<group>";
+		};
+		625FAB2960384D3BD5288FC6F6BCD9A6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A87FC07A72C6D94E2D19C1956ED90914 /* Pods-CoinBliss */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		7511D6F214ABC2BE91B49C3E4112EE62 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */,
-				7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */,
+				9E3AE83C30945452F175DD6CD3A5DC51 /* SwiftLint.debug.xcconfig */,
+				DAAC9A9951789BFA7D1CD276C02F92C7 /* SwiftLint.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftLint";
 			sourceTree = "<group>";
 		};
-		8EF61A726319844C37BE6D43E948A4E1 /* Pods-CoinBliss */ = {
+		9FA3B4A11503C2A1B6DBB631D606E136 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6D1F22664F76C413591B1C634D0756F5 /* Pods-CoinBliss.modulemap */,
-				FD2E1B272F128B60DF312B8E8EF2F970 /* Pods-CoinBliss-acknowledgements.markdown */,
-				E1F6F14ADD1A904F308E66AE6D9633EE /* Pods-CoinBliss-acknowledgements.plist */,
-				E4B03F3D275DFE174AB02F4FDBF51B77 /* Pods-CoinBliss-dummy.m */,
-				114EBEA0BC7D29F6B692E4B679FC02FE /* Pods-CoinBliss-Info.plist */,
-				9D52C2E488F34C5D18AA3D61303B0039 /* Pods-CoinBliss-umbrella.h */,
-				45F5EEDA13DFE4B47DA1229804D3061C /* Pods-CoinBliss.debug.xcconfig */,
-				9419B987CE21EFBA7C77E073370142FE /* Pods-CoinBliss.release.xcconfig */,
+				F880AE34CCDF49167D4C5721B30D7255 /* CombineCocoa */,
+				F09BAB372947D655A5357D838F27F13E /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A062DDE8B017707273BABCDBADC97A0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAC91070C4196357785C6A157C24782A /* CombineCocoa.framework */,
+				78A6015911CEAC694B07318D2EC8DD44 /* Pods-CoinBliss */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A87FC07A72C6D94E2D19C1956ED90914 /* Pods-CoinBliss */ = {
+			isa = PBXGroup;
+			children = (
+				7F7834B9C45F4BDCCF7FB950C27EA069 /* Pods-CoinBliss.modulemap */,
+				7C1FF1E3C8BF9BEA2B7A950A4F2EA643 /* Pods-CoinBliss-acknowledgements.markdown */,
+				1B816C295C89521349EBFB4473A776E4 /* Pods-CoinBliss-acknowledgements.plist */,
+				A5FDE5BBFE82BDA93125B5D560ABCE1F /* Pods-CoinBliss-dummy.m */,
+				1E1664BF296E17501377CB2693864619 /* Pods-CoinBliss-frameworks.sh */,
+				9D48C098FF028F7AA20B092112AE8CFE /* Pods-CoinBliss-Info.plist */,
+				C13288532C2E98CC9B06CB78A013B1CB /* Pods-CoinBliss-umbrella.h */,
+				325FCEB2DD3E45F589D8E4FCD38C6369 /* Pods-CoinBliss.debug.xcconfig */,
+				5C2663E57F322F2B4D10268264268ECE /* Pods-CoinBliss.release.xcconfig */,
 			);
 			name = "Pods-CoinBliss";
 			path = "Target Support Files/Pods-CoinBliss";
 			sourceTree = "<group>";
 		};
-		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+		AA581D828EDF08531495EFA1CB2616BC /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D96179D43A67C5D5323B0682D32C133C /* SwiftLint */,
+				7375A81860FC8096B64A8F25B9DAFB77 /* Combine.framework */,
+				B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */,
 			);
-			name = Pods;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				965877409E01FB3D85D85E90E6B30185 /* Pods */,
-				49D3AE98CA674C70718508BE6E0E7117 /* Products */,
-				534BDC35B9908EECD5789912840319D7 /* Targets Support Files */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				9FA3B4A11503C2A1B6DBB631D606E136 /* Pods */,
+				A062DDE8B017707273BABCDBADC97A0E /* Products */,
+				625FAB2960384D3BD5288FC6F6BCD9A6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		F09BAB372947D655A5357D838F27F13E /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D96179D43A67C5D5323B0682D32C133C /* SwiftLint */ = {
-			isa = PBXGroup;
-			children = (
-				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
+				7511D6F214ABC2BE91B49C3E4112EE62 /* Support Files */,
 			);
 			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		F880AE34CCDF49167D4C5721B30D7255 /* CombineCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				E60FA592FE6704E77C207F24101EEFFB /* AnimatedAssignSubscriber.swift */,
+				A4D852742C45AD8ED1670D98B31F0826 /* CombineCocoa.h */,
+				149B3A1CF158187BD37E6B2FCF215906 /* CombineControlEvent.swift */,
+				B6B85A0DD1CA731302C65711C757E00F /* CombineControlProperty.swift */,
+				80F0E31766953D3051E5AE31E620E185 /* CombineControlTarget.swift */,
+				24803233171F6680C1F5118862735AFF /* DelegateProxy.swift */,
+				9DECD3A55919A03AF229973B0FB2F99F /* DelegateProxyPublisher.swift */,
+				E3E411E813FA1E7925FB7BACA05AAC74 /* DelegateProxyType.swift */,
+				0B92EAE8B66AEF32AD5A46AB0C4DA855 /* NSTextStorage+Combine.swift */,
+				66D2226919B5E33885EED69DCC0A7AC0 /* ObjcDelegateProxy.h */,
+				0589D05B81A7647C81A5EDFDF8760031 /* ObjcDelegateProxy.m */,
+				9F14539C2687C0D0EFAC78EF9B1ED8B6 /* UIBarButtonItem+Combine.swift */,
+				D8C472C0EE8D14C36EE0BC1F719DAD05 /* UIButton+Combine.swift */,
+				B874BDB0D03D81E1CE9AF1B24E10C9CB /* UICollectionView+Combine.swift */,
+				E1297AA7A4E3E1F41EB293BA328FCB55 /* UIControl+Combine.swift */,
+				45E16BA1AC88408FFC9E041A1488E2D3 /* UIDatePicker+Combine.swift */,
+				984A1B30DCF5D59181CA8EB2B156AC02 /* UIGestureRecognizer+Combine.swift */,
+				07A3A9707E0719466E2E88FA8D3D5F16 /* UIPageControl+Combine.swift */,
+				5F58F8F4F3BAF9127B1B633DE762DB55 /* UIRefreshControl+Combine.swift */,
+				38F08675C3585BB67138EB7611F87E13 /* UIScrollView+Combine.swift */,
+				CBBA70B104C40DE996D1C096AB3EACCD /* UISearchBar+Combine.swift */,
+				2519652BB699456146880DCFA61C9E97 /* UISegmentedControl+Combine.swift */,
+				816566F64F946737DB8CD863DD0DADAF /* UISlider+Combine.swift */,
+				B2B41E6B45C434BDB566D6309038B4D9 /* UIStepper+Combine.swift */,
+				FAE28AB07507B16AD6D6172C27B853CE /* UISwitch+Combine.swift */,
+				9F6140A5A48DE293E4DC1E13DB659E01 /* UITableView+Combine.swift */,
+				32017CC0E46C5FB68A33BCC57364D16D /* UITextField+Combine.swift */,
+				365AA9DAA2AC30D46C89FE07C1811F88 /* UITextView+Combine.swift */,
+				1CF56A8F00C75D70CA321D261C96DEA0 /* Support Files */,
+			);
+			path = CombineCocoa;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3FA9B6EEDAA6B0F5DB377546464C7648 /* Headers */ = {
+		B1BAD6D24A5BCAC0B9443750C6D3A94B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				256F6034DF377E63BB164BF2667A7E89 /* Pods-CoinBliss-umbrella.h in Headers */,
+				86FA00447A25100583972DA500704CE8 /* CombineCocoa.h in Headers */,
+				9B924A1C934133544BB8EEE4050C46C8 /* CombineCocoa-umbrella.h in Headers */,
+				F2C9B2DA1AE25185DFF1DE23CF7840FF /* ObjcDelegateProxy.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7CCAF669F28B4FC88411F55708669F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B93ECE7E6FA8F7BBDABEA54BA9D5AAED /* Pods-CoinBliss-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,21 +315,40 @@
 /* Begin PBXNativeTarget section */
 		09EA786105DE5C4D2BAFCEA76085925C /* Pods-CoinBliss */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ECDA5E4D032D58A646F9DA4974DDAA61 /* Build configuration list for PBXNativeTarget "Pods-CoinBliss" */;
+			buildConfigurationList = A043653C192E928ADADDCE1E42A1F341 /* Build configuration list for PBXNativeTarget "Pods-CoinBliss" */;
 			buildPhases = (
-				3FA9B6EEDAA6B0F5DB377546464C7648 /* Headers */,
-				2E6CF53E76AD8088DF892F35EB37E7C9 /* Sources */,
-				E1C924DBD8C0823299B0CB1E0CE9B3AE /* Frameworks */,
-				5622B9CC3FE70A62CF285F5110ECA7F1 /* Resources */,
+				FD7CCAF669F28B4FC88411F55708669F /* Headers */,
+				79F1F5B2556AC22305F3AEA7993B8F90 /* Sources */,
+				6B3D5D0933ED8AA0E49E02A43C31EDC0 /* Frameworks */,
+				E9AADB98A617A1E55003F9C159D37602 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C6E6A4B98EF9453E44D19C041E482E08 /* PBXTargetDependency */,
+				CAC84D4B0E3123752B1E0FDFDEB2FD97 /* PBXTargetDependency */,
+				E6DE592F246083154E0D2E60955DDC97 /* PBXTargetDependency */,
 			);
 			name = "Pods-CoinBliss";
 			productName = Pods_CoinBliss;
 			productReference = 78A6015911CEAC694B07318D2EC8DD44 /* Pods-CoinBliss */;
+			productType = "com.apple.product-type.framework";
+		};
+		1C11E051A417486DA3B63E1333BABA34 /* CombineCocoa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80507F77A7E0C3C606BF653C63D61627 /* Build configuration list for PBXNativeTarget "CombineCocoa" */;
+			buildPhases = (
+				B1BAD6D24A5BCAC0B9443750C6D3A94B /* Headers */,
+				2E5623B7F5DD33715446A69A82C605B6 /* Sources */,
+				1564A426E3508EAEC8910125D6236763 /* Frameworks */,
+				3D745707469ED355E2C6E9683B031652 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CombineCocoa;
+			productName = CombineCocoa;
+			productReference = EAC91070C4196357785C6A157C24782A /* CombineCocoa.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -188,7 +358,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -199,10 +369,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 49D3AE98CA674C70718508BE6E0E7117 /* Products */;
+			productRefGroup = A062DDE8B017707273BABCDBADC97A0E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				1C11E051A417486DA3B63E1333BABA34 /* CombineCocoa */,
 				09EA786105DE5C4D2BAFCEA76085925C /* Pods-CoinBliss */,
 				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
 			);
@@ -210,7 +381,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5622B9CC3FE70A62CF285F5110ECA7F1 /* Resources */ = {
+		3D745707469ED355E2C6E9683B031652 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9AADB98A617A1E55003F9C159D37602 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -220,31 +398,70 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2E6CF53E76AD8088DF892F35EB37E7C9 /* Sources */ = {
+		2E5623B7F5DD33715446A69A82C605B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CAF962D99C72D40B399E2F9511DDA68 /* Pods-CoinBliss-dummy.m in Sources */,
+				90B3132953A4A95988795FEA40CB8D73 /* AnimatedAssignSubscriber.swift in Sources */,
+				67A31ED8F1E494D19EA0BC90E66BBE8B /* CombineCocoa-dummy.m in Sources */,
+				8F46F082E10DAA4130EF048386DCC4E2 /* CombineControlEvent.swift in Sources */,
+				5E8FE161D99CCAA38C3A103B2FEA9603 /* CombineControlProperty.swift in Sources */,
+				3EA3A195C2A23E8C06DE3C629B1063EA /* CombineControlTarget.swift in Sources */,
+				6F8A5E00682F90BB02A6DCBA549C6A83 /* DelegateProxy.swift in Sources */,
+				E54635A4D8F535BA9FCA47A2D84CADA4 /* DelegateProxyPublisher.swift in Sources */,
+				DE36EF815D89A15373D1A490437640B7 /* DelegateProxyType.swift in Sources */,
+				D7EF4ACEFD04C4F66598E2C0D6F02ECB /* NSTextStorage+Combine.swift in Sources */,
+				72667F8031A752DE6BAE2B6EA1A69D6B /* ObjcDelegateProxy.m in Sources */,
+				FB64DC8A847B473AAB0A4795FDCD9DDC /* UIBarButtonItem+Combine.swift in Sources */,
+				A2C26EEF75257126205734AC7E7DE293 /* UIButton+Combine.swift in Sources */,
+				7D9841F7C6F14DCE8E6F12AB90A15D67 /* UICollectionView+Combine.swift in Sources */,
+				CFEEB8CA63DD6FC63C8E9F0C404C9BDE /* UIControl+Combine.swift in Sources */,
+				9FB7135998F4375EAA8C7F65D7A823CC /* UIDatePicker+Combine.swift in Sources */,
+				22C9774F5D64C609FF226079DDE49F4D /* UIGestureRecognizer+Combine.swift in Sources */,
+				349CB78BC37D5D31FE6EFF35CB9CEF48 /* UIPageControl+Combine.swift in Sources */,
+				2697E3C306A6B0A2E74B6115884A2FD9 /* UIRefreshControl+Combine.swift in Sources */,
+				CC7F70665A05BC2A86BE57E7DDA98D93 /* UIScrollView+Combine.swift in Sources */,
+				006ECFE6E7A6C6E9590EBC72D069CF9A /* UISearchBar+Combine.swift in Sources */,
+				C9EBF80001D5B90BB6B1336150E109DF /* UISegmentedControl+Combine.swift in Sources */,
+				0D4DAE11442AF4A7434D168E51C953A7 /* UISlider+Combine.swift in Sources */,
+				D58FD7769C5012B7F7B9AEA98AE7FBD5 /* UIStepper+Combine.swift in Sources */,
+				506071D61A1CF654A3DAC6CA0356F602 /* UISwitch+Combine.swift in Sources */,
+				010CB9EBC3CD34143A0D5621259FC247 /* UITableView+Combine.swift in Sources */,
+				CA89EFCF041F26A422A1B47DA217FA5F /* UITextField+Combine.swift in Sources */,
+				8D085421550BFDB6E322EADAB1D59469 /* UITextView+Combine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79F1F5B2556AC22305F3AEA7993B8F90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1905960C59EFC6E183BDF393D8FFC96D /* Pods-CoinBliss-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C6E6A4B98EF9453E44D19C041E482E08 /* PBXTargetDependency */ = {
+		CAC84D4B0E3123752B1E0FDFDEB2FD97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CombineCocoa;
+			target = 1C11E051A417486DA3B63E1333BABA34 /* CombineCocoa */;
+			targetProxy = B1BB8A009B294B33A89C774AA5BFE8CE /* PBXContainerItemProxy */;
+		};
+		E6DE592F246083154E0D2E60955DDC97 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftLint;
 			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = 75B5ABBCDDE4B695E581B9351C973F6C /* PBXContainerItemProxy */;
+			targetProxy = DB6C455B78AF4E2C6FC3AFF76F889A3E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1C6CABD0FBC72F8C91BE7286786A272A /* Debug */ = {
+		1DB8F1526E368304F4732D0D14F7685B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45F5EEDA13DFE4B47DA1229804D3061C /* Pods-CoinBliss.debug.xcconfig */;
+			baseConfigurationReference = 03410BE3BD13928FC0D1F95878721210 /* CombineCocoa.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -254,7 +471,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CoinBliss/Pods-CoinBliss-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CombineCocoa/CombineCocoa-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CombineCocoa/CombineCocoa-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -262,20 +480,19 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CoinBliss/Pods-CoinBliss.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/CombineCocoa/CombineCocoa.modulemap";
+				PRODUCT_MODULE_NAME = CombineCocoa;
+				PRODUCT_NAME = CombineCocoa;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		45285987FDC204B9DB7C0228892D4B3E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -312,7 +529,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -341,6 +557,43 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		485495C2BCA12F45CAEDDB582DF373CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 325FCEB2DD3E45F589D8E4FCD38C6369 /* Pods-CoinBliss.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CoinBliss/Pods-CoinBliss-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoinBliss/Pods-CoinBliss.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -379,7 +632,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -407,9 +659,61 @@
 			};
 			name = Release;
 		};
-		89857A7AA554B55A5720F6D02888D51A /* Release */ = {
+		8F4C784FF6B24FF324AD1EC94E095104 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9419B987CE21EFBA7C77E073370142FE /* Pods-CoinBliss.release.xcconfig */;
+			baseConfigurationReference = 0A40F254D0183841B7030DA4B9CAAB7C /* CombineCocoa.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CombineCocoa/CombineCocoa-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CombineCocoa/CombineCocoa-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CombineCocoa/CombineCocoa.modulemap";
+				PRODUCT_MODULE_NAME = CombineCocoa;
+				PRODUCT_NAME = CombineCocoa;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAAC9A9951789BFA7D1CD276C02F92C7 /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D758552F0F763697D4C9CC6C9E0D46BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C2663E57F322F2B4D10268264268ECE /* Pods-CoinBliss.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -445,26 +749,9 @@
 			};
 			name = Release;
 		};
-		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */;
+			baseConfigurationReference = 9E3AE83C30945452F175DD6CD3A5DC51 /* SwiftLint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,20 +777,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		80507F77A7E0C3C606BF653C63D61627 /* Build configuration list for PBXNativeTarget "CombineCocoa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F4C784FF6B24FF324AD1EC94E095104 /* Debug */,
+				1DB8F1526E368304F4732D0D14F7685B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A043653C192E928ADADDCE1E42A1F341 /* Build configuration list for PBXNativeTarget "Pods-CoinBliss" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				485495C2BCA12F45CAEDDB582DF373CB /* Debug */,
+				D758552F0F763697D4C9CC6C9E0D46BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */,
 				AD81E62ACCB0B7A923FC8AA288F9921E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ECDA5E4D032D58A646F9DA4974DDAA61 /* Build configuration list for PBXNativeTarget "Pods-CoinBliss" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C6CABD0FBC72F8C91BE7286786A272A /* Debug */,
-				89857A7AA554B55A5720F6D02888D51A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import CombineCocoa
 
 final class HomeViewController: BaseViewController<HomeViewModel> {
     var router: HomeRouter?
@@ -92,6 +93,13 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         self.viewModel.$sections
             .sink { [weak self] _ in
                 self?.collectionView.reloadData()
+            }
+            .store(in: &cancellables)
+        
+        self.collectionView.didSelectItemPublisher
+            .sink { indexPath in
+                print(indexPath)
+                // open TransactionsVC
             }
             .store(in: &cancellables)
     }
