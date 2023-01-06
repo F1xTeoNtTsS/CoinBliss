@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HomeCellProtocol {
+    static var cellId: String { get }
+}
+
 protocol TotalAmountCellDelegate: AnyObject {
     func handleTapOnEyeButton()
 }

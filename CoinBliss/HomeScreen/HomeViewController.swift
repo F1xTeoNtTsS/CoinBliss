@@ -99,10 +99,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
             .store(in: &cancellables)
     }
     
-    @objc func pressButton(button: UIButton) {
-        
-    }
-    
     private func moveFloatingButton(contentOffset: CGPoint) {
         let transform = contentOffset.y > 0
         ? CGAffineTransform(translationX: 0, y: 100)
@@ -115,7 +111,15 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
             self.floatingButton.transform = transform
         }
     }
+    
+    // MARK: - Interactions
+    
+    @objc func pressButton(button: UIButton) {
+        
+    }
 }
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
