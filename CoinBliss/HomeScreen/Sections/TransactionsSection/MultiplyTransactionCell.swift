@@ -10,11 +10,11 @@ import UIKit
 final class MultiplyTransactionCell: UICollectionViewCell {
     static let cellId = "MultiplyTransactionCell"
     
-    private let transactionsVC = TransactionsController(mode: .small)
+    private let transactionsVC = TransactionsController(viewModel: TransactionsViewModel(mode: .small))
     
-    func setup(_ transactions: [Transaction]) {
-        self.transactionsVC.transactions = transactions
-    }
+//    func setup(_ transactions: [Transaction]) {
+//        self.transactionsVC.transactions = transactions
+//    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,10 +34,10 @@ final class MultiplyTransactionCell: UICollectionViewCell {
         transactionsVC.view.clipsToBounds = true
 
         NSLayoutConstraint.activate([
-            transactionsVC.view.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            transactionsVC.view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            transactionsVC.view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            transactionsVC.view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
+            transactionsVC.view.topAnchor.constraint(equalTo: self.topAnchor),
+            transactionsVC.view.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            transactionsVC.view.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            transactionsVC.view.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     

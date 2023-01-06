@@ -18,11 +18,7 @@ final class HomeMockData {
         return HomeSection.totalAmountSection(totalAmount)
     }
     
-    private var totalAmount2: HomeSection = {
-        .totalAmountSection(TotalAmount(balance: 999098570, currency: "IDR", isVisible: false))
-    }()
-    
-    private var transactions: HomeSection = {
+    private var recentTransactions: HomeSection = {
         let lastFivePayments = PaymentStore.shared.lastFivePayments()
         let transactions = lastFivePayments.map {
             Transaction(payment: $0, category: CategoryStore.shared.categoryById($0.categoryId))}
@@ -54,12 +50,12 @@ final class HomeMockData {
     var data: [HomeSection] {
         [self.makeSectionForTotalAmount(self.totalAmount),
          self.summary,
-         self.transactions]
+         self.recentTransactions]
     }
     
-    var data2: [HomeSection] {
-        [self.totalAmount2,
-         self.summary,
-         self.transactions]
+    var allTransactions: [Transaction] {
+        let transactions = PaymentStore.shared.payments.map {
+            Transaction(payment: $0, category: CategoryStore.shared.categoryById($0.categoryId))}
+        return transactions
     }
 }

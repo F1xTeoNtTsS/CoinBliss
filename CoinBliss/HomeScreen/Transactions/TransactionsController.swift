@@ -7,17 +7,11 @@
 
 import UIKit
 
-enum Mode {
-    case fullscreen, small
-}
-
-final class TransactionsController: UICollectionViewController {
+final class TransactionsController: BaseViewController<TransactionsViewModel> {
+    var router: TransactionsRouter?
     
-    var transactions: [Transaction] = []
-    var count: Int = 0
-    
-    private var mode: Mode?
-    override var prefersStatusBarHidden: Bool { return true }
+    private var collectionView: UICollectionView!
+//    override var prefersStatusBarHidden: Bool { return true }
     
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
@@ -30,17 +24,29 @@ final class TransactionsController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        switch mode {
+        self.setupCollectionView()
+        print("TransactionsController init")
+    }
+    
+    private func setupCollectionView() {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        
+        collectionView.backgroundColor = .clear
+        self.view.addSubview(self.collectionView)
+        self.collectionView.frame = self.view.frame
+        
+        collectionView.register(TransactionCell.self, forCellWithReuseIdentifier: TransactionCell.cellId)
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        switch viewModel.mode {
         case .fullscreen:
-            setCloseButton()
+            self.setCloseButton()
             navigationController?.isNavigationBarHidden = true
         case .small:
             self.collectionView.isScrollEnabled = false
-        default:
-            break
         }
-        
-        collectionView.register(TransactionCell.self, forCellWithReuseIdentifier: TransactionCell.cellId)
     }
     
     @objc private func closeButtonTapped() {
@@ -56,63 +62,52 @@ final class TransactionsController: UICollectionViewController {
             closeButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if mode == .fullscreen {
-            return transactions.count
-        }
-        return min(5, transactions.count)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView,
-                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionCell.cellId,
-                                                            for: indexPath) as? TransactionCell else {
-            return UICollectionViewCell()
-        }
-        DispatchQueue.main.async {
-            cell.cellModel = self.transactions[indexPath.row]
-        }
-        return cell
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
-    init(mode: Mode) {
-        self.mode = mode
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
 }
 
 extension TransactionsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        if mode == .fullscreen {
-            return .init(top: 20, left: 20, bottom: 20, right: 20)
-        }
-        return .zero
+        return viewModel.mode == .fullscreen
+        ? .init(top: 20, left: 20, bottom: 20, right: 20)
+        : .init(top: 0, left: -20, bottom: 0, right: 20)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height: CGFloat = 70
-        if mode == .small {
-            return .init(width: view.frame.width, height: height)
-        }
-        return .init(width: view.frame.width - 40, height: height)
+        return viewModel.mode == .fullscreen
+        ? .init(width: view.frame.width - 40, height: height)
+        : .init(width: view.frame.width, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+
+extension TransactionsController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if viewModel.mode == .fullscreen {
+            return viewModel.transactions.count
+        }
+        return min(5, viewModel.transactions.count)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionCell.cellId,
+                                                            for: indexPath) as? TransactionCell else {
+            return UICollectionViewCell()
+        }
+        DispatchQueue.main.async {
+            cell.cellModel = self.viewModel.transactions[indexPath.row]
+        }
+        return cell
     }
 }

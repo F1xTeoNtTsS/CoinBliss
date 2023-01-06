@@ -153,12 +153,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             cell.cellModel = summary[indexPath.row]
             return cell
-        case .transactionsSection(let transactions):
+        case .transactionsSection:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MultiplyTransactionCell.cellId,
                                                                 for: indexPath) as? MultiplyTransactionCell else {
                 return UICollectionViewCell()
             }
-            cell.setup(transactions)
+//            cell.setup(transactions)
             return cell
         }
     }

@@ -91,11 +91,10 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
     }
     
    private func setViewsLayout() {
-        let views = [self.categoryImage, self.stackView, self.sumLabel, self.separatorView]
-        views.forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-            self.contentView.addSubview(view)
-        }
+       [self.categoryImage, self.stackView, self.sumLabel, self.separatorView].forEach {
+           $0.translatesAutoresizingMaskIntoConstraints = false
+           self.contentView.addSubview($0)
+       }
         
         NSLayoutConstraint.activate([
             self.categoryImage.widthAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.8),
@@ -108,8 +107,8 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
             self.stackView.leadingAnchor.constraint(equalTo: self.categoryImage.trailingAnchor, constant: 10),
 
             self.sumLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            self.sumLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
             self.sumLabel.leadingAnchor.constraint(equalTo: self.stackView.trailingAnchor, constant: 20),
+            self.sumLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
 
             self.separatorView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
             self.separatorView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
