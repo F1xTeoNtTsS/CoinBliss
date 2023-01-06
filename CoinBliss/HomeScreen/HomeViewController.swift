@@ -87,8 +87,13 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         
         self.collectionView.didSelectItemPublisher
             .sink { indexPath in
-                print(indexPath)
-                // open TransactionsVC
+                switch indexPath {
+                case [2, 0]:
+                    self.router?.openTransationsVC()
+                default:
+                    break
+                }
+                
             }
             .store(in: &cancellables)
         
@@ -158,7 +163,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                                 for: indexPath) as? MultiplyTransactionCell else {
                 return UICollectionViewCell()
             }
-//            cell.setup(transactions)
             return cell
         }
     }

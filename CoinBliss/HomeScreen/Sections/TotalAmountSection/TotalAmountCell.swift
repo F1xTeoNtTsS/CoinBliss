@@ -122,10 +122,9 @@ final class TotalAmountCell: UICollectionViewCell, HomeCellProtocol {
     }
     
     private func setViewsLayout() {
-        let views = [self.eyeButton, self.currencyButton, self.amountLabel, self.describingLabel]
-        views.forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-            self.contentView.addSubview(view)
+        [self.eyeButton, self.currencyButton, self.amountLabel, self.describingLabel].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            self.contentView.addSubview($0)
         }
         
         NSLayoutConstraint.activate([

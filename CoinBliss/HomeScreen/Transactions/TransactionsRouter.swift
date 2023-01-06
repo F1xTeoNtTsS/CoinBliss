@@ -20,6 +20,8 @@ final class TransactionsRouter: Router {
         let viewModel = TransactionsViewModel(mode: .fullscreen)
         let transactionsController = TransactionsController(viewModel: viewModel)
         transactionsController.router = self
-        navigation.setViewControllers([transactionsController], animated: true)
+        transactionsController.modalPresentationStyle = .fullScreen
+//        navigation.setViewControllers([transactionsController], animated: true)
+        navigation.present(transactionsController, animated: true)
     }
 }

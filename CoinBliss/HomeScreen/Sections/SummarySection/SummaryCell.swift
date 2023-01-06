@@ -103,10 +103,9 @@ final class SummaryCell: UICollectionViewCell, HomeCellProtocol {
     }()
     
     private func setViewsLayout() {
-        let views = [self.stackView]
-        views.forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-            self.contentView.addSubview(view)
+        [self.stackView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            self.contentView.addSubview($0)
         }
         
         NSLayoutConstraint.activate([

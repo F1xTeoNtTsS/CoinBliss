@@ -11,7 +11,7 @@ final class TransactionsController: BaseViewController<TransactionsViewModel> {
     var router: TransactionsRouter?
     
     private var collectionView: UICollectionView!
-//    override var prefersStatusBarHidden: Bool { return true }
+    override var prefersStatusBarHidden: Bool { return true }
     
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
@@ -31,7 +31,7 @@ final class TransactionsController: BaseViewController<TransactionsViewModel> {
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = Resources.Colors.cellMainColor
         self.view.addSubview(self.collectionView)
         self.collectionView.frame = self.view.frame
         
@@ -49,10 +49,6 @@ final class TransactionsController: BaseViewController<TransactionsViewModel> {
         }
     }
     
-    @objc private func closeButtonTapped() {
-        self.dismiss(animated: true)
-    }
-    
     private func setCloseButton() {
         self.view.addSubview(closeButton)
         NSLayoutConstraint.activate([
@@ -61,6 +57,11 @@ final class TransactionsController: BaseViewController<TransactionsViewModel> {
             closeButton.widthAnchor.constraint(equalToConstant: 50),
             closeButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+        self.closeButton.setDefaultShadow()
+    }
+    
+    @objc private func closeButtonTapped() {
+        self.dismiss(animated: true)
     }
 }
 
@@ -69,19 +70,19 @@ extension TransactionsController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return viewModel.mode == .fullscreen
-        ? .init(top: 20, left: 20, bottom: 20, right: 20)
+        ? .init(top: 20, left: 0, bottom: 20, right: 0)
         : .init(top: 0, left: -20, bottom: 0, right: 20)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height: CGFloat = 70
         return viewModel.mode == .fullscreen
-        ? .init(width: view.frame.width - 40, height: height)
+        ? .init(width: view.frame.width - 20, height: height)
         : .init(width: view.frame.width, height: height)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {

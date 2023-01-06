@@ -65,7 +65,7 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.backgroundColor = Resources.Colors.cellMainColor
+        self.backgroundColor = .clear
     }
     
     private func setup(_ transaction: Transaction) {
@@ -97,13 +97,13 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
        }
         
         NSLayoutConstraint.activate([
+            self.categoryImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.categoryImage.widthAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.8),
             self.categoryImage.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.8),
-            self.categoryImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.categoryImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
 
-            self.stackView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3),
             self.stackView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+            self.stackView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3),
             self.stackView.leadingAnchor.constraint(equalTo: self.categoryImage.trailingAnchor, constant: 10),
 
             self.sumLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),

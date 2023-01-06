@@ -12,10 +12,6 @@ final class MultiplyTransactionCell: UICollectionViewCell {
     
     private let transactionsVC = TransactionsController(viewModel: TransactionsViewModel(mode: .small))
     
-//    func setup(_ transactions: [Transaction]) {
-//        self.transactionsVC.transactions = transactions
-//    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.backgroundColor = Resources.Colors.cellMainColor

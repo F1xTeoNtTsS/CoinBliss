@@ -22,4 +22,9 @@ final class HomeRouter: Router {
         listController.router = self
         navigation.setViewControllers([listController], animated: true)
     }
+    
+    func openTransationsVC() {
+        let transactionsRouter = TransactionsRouter(navigation: navigation, assembly: assembly)
+        transactionsRouter.run()
+    }
 }
