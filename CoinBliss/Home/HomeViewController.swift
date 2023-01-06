@@ -34,19 +34,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         self.setupBackgroundGradient()
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let transform = scrollView.contentOffset.y > 0
-        ? CGAffineTransform(translationX: 0, y: 100)
-        : .identity
-        UIView.animate(withDuration: 0.8,
-                       delay: 0,
-                       usingSpringWithDamping: 0.7,
-                       initialSpringVelocity: 0.7,
-                       options: .curveEaseOut) {
-            self.floatingButton.transform = transform
-        }
-    }
-    
     private func setupBackgroundGradient() {
         self.gradientLayer.frame = self.view.bounds
         self.view.backgroundColor = .white
@@ -57,6 +44,10 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.makeCollectionViewFlowLayout())
+        
+        collectionView.backgroundColor = .clear
+        self.view.addSubview(self.collectionView)
+        self.collectionView.frame = self.view.frame
         
         collectionView.register(TotalAmountCell.self,
                                 forCellWithReuseIdentifier: TotalAmountCell.cellId)
@@ -70,8 +61,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        setCollectionViewLayout()
     }
     
     private func setupFloatingButton() {
@@ -102,10 +91,29 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
                 // open TransactionsVC
             }
             .store(in: &cancellables)
+        
+        self.collectionView.contentOffsetPublisher
+            .sink { [weak self] contentOffset in
+                self?.moveFloatingButton(contentOffset: contentOffset)
+            }
+            .store(in: &cancellables)
     }
     
     @objc func pressButton(button: UIButton) {
         
+    }
+    
+    private func moveFloatingButton(contentOffset: CGPoint) {
+        let transform = contentOffset.y > 0
+        ? CGAffineTransform(translationX: 0, y: 100)
+        : .identity
+        UIView.animate(withDuration: 0.8,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0.7,
+                       options: .curveEaseOut) {
+            self.floatingButton.transform = transform
+        }
     }
 }
 
@@ -176,13 +184,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
+// MARK: - UICollectionViewCompositionalLayout
+
 extension HomeViewController {
-    private func setCollectionViewLayout() {
-        collectionView.backgroundColor = .clear
-        self.view.addSubview(self.collectionView)
-        self.collectionView.frame = self.view.frame
-    }
-    
     private func makeCollectionViewFlowLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             guard let self = self else { return nil }
@@ -244,6 +248,8 @@ extension HomeViewController {
               alignment: .topLeading)
     }
 }
+
+// MARK: - TotalAmountCellDelegate
 
 extension HomeViewController: TotalAmountCellDelegate {
     func handleTapOnEyeButton() {
