@@ -111,7 +111,7 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
             self.sumLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
 
             self.separatorView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
-            self.separatorView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            self.separatorView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
             self.separatorView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
             self.separatorView.heightAnchor.constraint(equalToConstant: 1)
         ])

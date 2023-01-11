@@ -15,7 +15,7 @@ final class HomeMockData {
     var totalAmount = TotalAmount(balance: 999098570, currency: "IDR", isVisible: true)
     
     func makeSectionForTotalAmount(_ totalAmount: TotalAmount) -> HomeSection {
-        return HomeSection.totalAmountSection(totalAmount)
+        HomeSection.totalAmountSection(totalAmount)
     }
     
     private var recentTransactions: HomeSection = {
@@ -33,18 +33,8 @@ final class HomeMockData {
         return HomeSection.summarySection(summaries)
     }()
     
-    static func getRandomDate() -> Date {
-        let date = Date()
-        let calendar = Calendar.current
-        var dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
-        let days = calendar.range(of: .day, in: .month, for: date)
-        let randomDay = days?.randomElement()
-        dateComponents.setValue(randomDay, for: .day)
-        return calendar.date(from: dateComponents) ?? date
-    }
-    
     static func getRandomCategory() -> Category {
-        return Category(id: 0, name: "House Rent", imageName: "house.circle", hexColor: "")
+        Category(id: 0, name: "House Rent", imageName: "house.circle", hexColor: "")
     }
     
     var data: [HomeSection] {

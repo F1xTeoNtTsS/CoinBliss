@@ -87,13 +87,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         
         self.collectionView.didSelectItemPublisher
             .sink { indexPath in
-                switch indexPath {
-                case [2, 0]:
-                    self.router?.openTransationsVC()
-                default:
-                    break
-                }
-                
+                self.router?.openAppropriateVC(indexPath: indexPath)
             }
             .store(in: &cancellables)
         
@@ -128,7 +122,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return self.viewModel.sections.count
+        self.viewModel.sections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

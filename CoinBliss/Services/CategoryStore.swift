@@ -27,6 +27,6 @@ final class CategoryStore: ObservableObject {
     private init() {}
     
     func categoryById(_ id: Int) -> Category {
-        return CategoryStore.shared.categories[id] ?? Category(id: 0, name: "", imageName: "", hexColor: "")
+        CategoryStore.shared.categories[id] ?? Category(id: 0, name: "", imageName: "", hexColor: "")
     }
 }

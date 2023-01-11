@@ -40,7 +40,7 @@ public enum Resources {
         }()
         
         private static func colorByTheme(light: UIColor, dark: UIColor) -> UIColor {
-            return UIColor { (traitCollection: UITraitCollection) -> UIColor in
+            UIColor { (traitCollection: UITraitCollection) -> UIColor in
                 switch traitCollection.userInterfaceStyle {
                 case .dark:
                     return dark

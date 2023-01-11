@@ -11,7 +11,7 @@ final class TransactionsController: BaseViewController<TransactionsViewModel> {
     var router: TransactionsRouter?
     
     private var collectionView: UICollectionView!
-    override var prefersStatusBarHidden: Bool { return true }
+    override var prefersStatusBarHidden: Bool { true }
     
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
@@ -25,7 +25,6 @@ final class TransactionsController: BaseViewController<TransactionsViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
-        print("TransactionsController init")
     }
     
     private func setupCollectionView() {
@@ -86,7 +85,7 @@ extension TransactionsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        0
     }
 }
 
@@ -94,10 +93,7 @@ extension TransactionsController: UICollectionViewDelegateFlowLayout {
 
 extension TransactionsController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if viewModel.mode == .fullscreen {
-            return viewModel.transactions.count
-        }
-        return min(5, viewModel.transactions.count)
+        viewModel.mode == .fullscreen ? viewModel.transactions.count : min(5, viewModel.transactions.count)
     }
     
     func collectionView(_ collectionView: UICollectionView,
