@@ -18,6 +18,6 @@ final class TransactionsViewModel {
     
     init(mode: Mode) {
         self.mode = mode
-        self.transactions = HomeMockData.shared.allTransactions
+        self.transactions = DataProvider.shared.transactions
     }
 }

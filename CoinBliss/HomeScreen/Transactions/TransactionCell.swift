@@ -72,7 +72,7 @@ final class TransactionCell: UICollectionViewCell, HomeCellProtocol {
         self.setupCategoryImage(imageName: transaction.category.imageName, hexColor: transaction.category.hexColor)
         self.setupSumLabel(amount: transaction.payment.amount, currency: transaction.payment.currency)
         self.categoryLabel.text = transaction.category.name
-        self.periodLabel.text = transaction.payment.period.rawValue.capitalized
+        self.periodLabel.text = transaction.payment.period.capitalized
         setViewsLayout()
     }
     

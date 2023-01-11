@@ -114,7 +114,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     // MARK: - Interactions
     
     @objc func pressButton(button: UIButton) {
-        
+        self.viewModel.addTransactionButtonTapped()
     }
 }
 

@@ -14,7 +14,6 @@ protocol HomeSectionService {
 
 extension HomeSectionService {
     func homeSectionsList() -> AnyPublisher<[HomeSection], Never> {
-        // coredata manager -> raw data
-        Just(HomeMockData.shared.data).eraseToAnyPublisher()
+        Just(DataProvider.shared.data).eraseToAnyPublisher()
     }
 }

@@ -17,7 +17,12 @@ final class HomeViewModel: HomeSectionService {
     }
     
     func eyeButtonTapped() {
-        HomeMockData.shared.totalAmount.isVisible.toggle()
+        DataProvider.shared.totalAmount.isVisible.toggle()
+        self.loadSections()
+    }
+    
+    func addTransactionButtonTapped() {
+        DataProvider.shared.addRandomTransaction()
         self.loadSections()
     }
     
