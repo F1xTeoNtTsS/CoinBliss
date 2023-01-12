@@ -10,7 +10,7 @@ import UIKit
 final class MultiplyTransactionCell: UICollectionViewCell {
     static let cellId = "MultiplyTransactionCell"
     
-    private let transactionsVC = TransactionsController(viewModel: TransactionsViewModel(mode: .small))
+    private var transactionsVC = TransactionsController(viewModel: TransactionsViewModel(mode: .small))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +21,10 @@ final class MultiplyTransactionCell: UICollectionViewCell {
         setViewsLayout()
         
         self.transactionsVC.view.isUserInteractionEnabled = false
+    }
+    
+    func update() {
+        self.transactionsVC.viewModel.updateTransactions()
     }
     
     private func setViewsLayout() {

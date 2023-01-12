@@ -20,4 +20,8 @@ final class TransactionsViewModel {
         self.mode = mode
         self.transactions = DataProvider.shared.transactions
     }
+    
+    func updateTransactions() {
+        self.transactions = DataProvider.shared.transactions
+    }
 }

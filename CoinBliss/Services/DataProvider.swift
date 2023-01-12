@@ -21,10 +21,10 @@ final class DataProvider {
     }
     
     func addRandomTransaction() {
-        let payment = Payment(id: 100_000_000,
+        let payment = Payment(id: 100_000_007,
                               amount: 100500,
-                              currency: "EUR",
-                              categoryId: 0,
+                              currency: "AUD",
+                              categoryId: 7,
                               period: Period.mountly.rawValue,
                               date: Date())
         self.coreDataManager.save(payment: payment)
@@ -32,7 +32,8 @@ final class DataProvider {
     }
     
     private func fetchTransactions() {
-        let payment = coreDataManager.fetchPayments()
+        var payment = coreDataManager.fetchPayments()
+        payment.sort(by: { $0.id > $1.id })
         let categories = coreDataManager.fetchCategories()
         self.categories = categories
         self.transactions = payment.map { Transaction(payment: $0, category: categories[$0.categoryId]!)}
@@ -59,11 +60,8 @@ extension DataProvider {
     }
     
     private func recentTransactionsSection() -> HomeSection {
-        let prefix = self.transactions.count >= 5 ? 5 : self.transactions.count
-        let recentTransactions = Array(self.transactions
-            .sorted(by: {$0.payment.date > $1.payment.date})
-            .prefix(upTo: prefix))
+        let count = self.transactions.count >= 5 ? 5 : self.transactions.count
         
-        return HomeSection.transactionsSection(recentTransactions)
+        return HomeSection.transactionsSection(transactionsCount: count)
     }
 }

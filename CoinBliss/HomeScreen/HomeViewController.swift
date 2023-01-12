@@ -157,6 +157,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                                 for: indexPath) as? MultiplyTransactionCell else {
                 return UICollectionViewCell()
             }
+            cell.update()
             return cell
         }
     }
@@ -200,8 +201,8 @@ extension HomeViewController {
             case .summarySection:
                 let section = self.layoutSummarySection()
                 return section
-            case .transactionsSection(let transactions):
-                let section = self.layoutTransactionsSection(transactionsCount: transactions.count)
+            case .transactionsSection(let transactionsCount):
+                let section = self.layoutTransactionsSection(transactionsCount: transactionsCount)
                 return section
             }
         }

@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 final class TransactionsController: BaseViewController<TransactionsViewModel> {
     var router: TransactionsRouter?
     
     private var collectionView: UICollectionView!
+    private var cancellables = Set<AnyCancellable>()
+    
     override var prefersStatusBarHidden: Bool { true }
     
     private lazy var closeButton: UIButton = {
@@ -25,6 +28,7 @@ final class TransactionsController: BaseViewController<TransactionsViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
+        self.setupBinders()
     }
     
     private func setupCollectionView() {
@@ -46,6 +50,14 @@ final class TransactionsController: BaseViewController<TransactionsViewModel> {
         case .small:
             self.collectionView.isScrollEnabled = false
         }
+    }
+    
+    private func setupBinders() {
+        self.viewModel.$transactions
+            .sink { [weak self] _ in
+                self?.collectionView.reloadData()
+            }
+            .store(in: &cancellables)
     }
     
     private func setCloseButton() {

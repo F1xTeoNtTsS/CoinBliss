@@ -8,7 +8,7 @@
 enum HomeSection {    
     case totalAmountSection(TotalAmount)
     case summarySection([Summary])
-    case transactionsSection([Transaction])
+    case transactionsSection(transactionsCount: Int)
     
     var title: String {
         switch self {
